@@ -1,0 +1,18 @@
+~ start
+Nathan: [#happy, #surprised] Oh, [[Hello|Howdy|Hi]]!
+Nathan: Here are some choices.
+- Roll a dice! => roll_a_dice
+- Second one
+	Nathan: You picked the second one.
+- Start again => start
+- End the conversation => END
+Nathan: For more information see the online documentation.
+=> END
+
+~ roll_a_dice
+Nathan: Wow, that is lucky!
+=> start
+
+# Basics: https://github.com/nathanhoad/godot_dialogue_manager/blob/main/docs/Basic_Dialogue.md
+# Conditional flow and game state mutations: https://github.com/nathanhoad/godot_dialogue_manager/blob/main/docs/Conditions_Mutations.md
+# Create my own ballon: https://github.com/nathanhoad/godot_dialogue_manager/blob/main/docs/Example_Balloons.md
