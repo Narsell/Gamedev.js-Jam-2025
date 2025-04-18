@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://c75wgds1kwsa0"]
+[gd_scene load_steps=9 format=3 uid="uid://c75wgds1kwsa0"]
 
 [ext_resource type="Script" uid="uid://dg0indc77axh5" path="res://dialogue_system/custom_balloon/balloon.gd" id="1_36de5"]
-[ext_resource type="Texture2D" uid="uid://xaqbmesukr0e" path="res://icon.svg" id="2_0r6qn"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 
@@ -82,23 +81,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_qq3yp")
 
-[node name="CharacterTexture" type="TextureRect" parent="Balloon"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -136.0
-offset_top = 53.0
-offset_right = -8.0
-offset_bottom = 181.0
-grow_horizontal = 0
-grow_vertical = 2
-texture = ExtResource("2_0r6qn")
-stretch_mode = 2
-
 [node name="PanelContainer" type="MarginContainer" parent="Balloon"]
 layout_mode = 1
 anchors_preset = 12
@@ -169,8 +151,6 @@ response_template = NodePath("ResponseExample")
 [node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu"]
 layout_mode = 2
 text = "Response example"
-
-[node name="Marker2D" type="Marker2D" parent="Balloon"]
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

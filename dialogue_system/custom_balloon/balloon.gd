@@ -47,11 +47,6 @@ var mutation_cooldown: Timer = Timer.new()
 ## The label showing the name of the currently speaking character
 @onready var character_label: RichTextLabel = %CharacterLabel
 
-## The texture of the currently speaking character.
-## Always on the right, when the main character speaks we don't want to show any texture
-## The main character texture will be part of the scene, not part of the balloon.
-@onready var character_texture: TextureRect = %CharacterTexture
-
 ## The label showing the currently spoken dialogue
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 
@@ -143,10 +138,8 @@ func next(next_id: String) -> void:
 ## Set the character label and dialogue position depending on if its the mc speaking or not.
 func adjust_dialog_panel() -> void:
 	if character_label.text == PlayerGlobals.mc_name:
-		character_texture.hide()
 		dialogue_panel.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
 	else:
-		character_texture.show()
 		dialogue_panel.size_flags_horizontal = Control.SIZE_SHRINK_END
 
 

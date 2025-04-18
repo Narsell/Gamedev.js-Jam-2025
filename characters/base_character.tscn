@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ct0mtlyuhgn83"]
+[gd_scene load_steps=3 format=3 uid="uid://ct0mtlyuhgn83"]
 
 [ext_resource type="Script" uid="uid://b1w7kvpgwn344" path="res://characters/base_character.gd" id="1_f78fl"]
+[ext_resource type="Texture2D" uid="uid://xaqbmesukr0e" path="res://icon.svg" id="2_xeerb"]
 
-[node name="BaseCharacter" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="BaseCharacter" type="Sprite2D"]
+texture = ExtResource("2_xeerb")
 script = ExtResource("1_f78fl")
