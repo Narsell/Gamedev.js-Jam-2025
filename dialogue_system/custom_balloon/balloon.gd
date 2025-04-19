@@ -86,9 +86,8 @@ func start(dialogue_resource: DialogueResource, title: String, extra_game_states
 	temporary_game_states = [self] + extra_game_states
 	is_waiting_for_input = false
 	resource = dialogue_resource
-	adjust_dialog_panel()
 	self.dialogue_line = await resource.get_next_dialogue_line(title, temporary_game_states)
-
+	adjust_dialog_panel()
 
 ## Apply any changes to the balloon given a new [DialogueLine].
 func apply_dialogue_line() -> void:

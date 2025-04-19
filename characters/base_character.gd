@@ -9,6 +9,7 @@ enum NEGOTIATOR_TYPE { SUCKER, NAIVE, AVERAGE, TOUGH, HARD }
 @export var _char_name : String = "NO_NAME"
 @export var _negotiator_type : NEGOTIATOR_TYPE = NEGOTIATOR_TYPE.AVERAGE
 @export_range(0, 1, 0.1) var _rapport_floor : float = 0
+## How good an offer needs to be over the acceptable price in order to increase rapport.
 @export_range(0, 0.3, 0.1) var _percent_to_increase_rapport : float = 0.1
 
 var _current_rapport : float = _rapport_floor

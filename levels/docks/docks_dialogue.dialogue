@@ -3,18 +3,29 @@ using GameState
 
 ~ start
 {{get_character_name()}}: You’ve got something to sell?
-{{mc_name}}: {{action}}{{mc_name}} lowers his gaze, his fingers tightening around the amulet.{{action_end}}[p]Aye... I’ve got summat.[/p]
+{{mc_name}}: {{action}}{{mc_name}} lowers his gaze, his fingers tightening around the amulet.{{action_end}}[p]Aye... I’ve got summat. Once meant the world to me.[/p]
 {{get_character_name()}}: [[Go on, let’s have a look.|Let us see it.|Waste not my time... Show it.]]
 {{mc_name}}: {{action}} {{mc_name}} hesitates, the weight of memory stirring as he studies the silver gleam in his hand. {{action_end}}
-- Speak grandly of its worth =>< oversell_amulet
+- Speak grandly of its worth =>< talk_shit
 - Speak truthfully =>< be_honest
+if intro_was_honest == false
+	{{get_character_name()}}: Hmph. Don’t think I’ll forget you took me for a fool.  
+	{{get_character_name()}}: {{action}}{{get_character_name()}} leans forward, slams both fists at the table, finger jabbing toward {{mc_name}}{{action_end}}
+	{{get_character_name()}}: You’ve more to sell, fine—bring it. But lie to me again, and I’ll see you tossed into the sea with naught but barnacles for company.
+else
+	{{get_character_name()}}: Fair trade’s a rare thing these days.  
+	{{get_character_name()}}: If you come by with more goods, I’ll have a look. No promises, but I’ll listen.
+do venuto_leaves_intro_shop.emit()
 => END
 
-~ oversell_amulet
+~ talk_shit
 {{mc_name}}: A relic of ages past… This very amulet was awarded to Sir William, hero of Elderstock Keep, and passed down his noble line. Some say it brings fortune to those who dare wear it.
 {{get_character_name()}}: You take me for a dullard? Every man and his dog in Longburn was handed one such trinket when the War of the Dummies drew to its end. You’re not the first to try and pass it off as some noble’s keepsake.
-{{get_character_name()}}: I’ll give you twenty groats. And that’s me bein’ generous.
+{{mc_name}}: {{action}}{{mc_name}} opens his eyes wide, frozen in place.{{action_end}}
+{{get_character_name()}}: I’ll give you twenty groats. And that’s me bein’ generous. Take it or leave it!
+{{mc_name}}: {{action}}{{mc_name}} lets out a long, weary sigh, shoulders sagging as if burdened by penance. {{action_end}}[p] Aye, I'll take it. I'm sorry... I'm just trying to get by.[/p]
 do add_player_money(20)
+set intro_was_honest = false
 => END
 
 ~ be_honest
@@ -23,6 +34,12 @@ do add_player_money(20)
 {{get_character_name()}}: Hmph... You’d be shocked how many come in here tryin’ to dress up that same story in fine words and old names. Thinkin’ I’ll pay more if they say “sir” and “keep” and “legend”.
 {{get_character_name()}}: {{action}}{{get_character_name()}} gives {{mc_name}} a nod, hand resting briefly on his shoulder.{{action_end}}[p]But you’re honest, and I’ll not fault a man for that.[/p]
 do increase_rapport(0.2)
-{{get_character_name()}}: Thirty-five groats. Take it or leave it.
+{{get_character_name()}}: Thirty-five groats. What say you?
+{{mc_name}}: {{action}}{{mc_name}} sighs loudly.{{action_end}}[p]Aye, I'll take that.[/p]
 do add_player_money(35)
+set intro_was_honest = true
 => END
+
+~ venuto_closing_lines
+{{mc_name}}: {{action}}{{mc_name}} stares at the silver in his hand, jaw tight, gaze far.{{action_end}}  
+{{mc_name}}: {{action}}His voice is barely more than a whisper.{{action_end}} [p]Traded memory for coin. Let’s hope the gods are kind... or at least, not watchin'.[/p]

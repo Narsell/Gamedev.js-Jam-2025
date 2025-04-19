@@ -1,8 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://b86fx1x2k2ovl"]
+[gd_scene load_steps=9 format=3 uid="uid://b86fx1x2k2ovl"]
 
 [ext_resource type="Script" uid="uid://b2webots1x2f1" path="res://levels/docks/docks_start.gd" id="1_ypo6y"]
-[ext_resource type="PackedScene" uid="uid://ct0mtlyuhgn83" path="res://characters/base_character.tscn" id="2_wcxyk"]
+[ext_resource type="Texture2D" uid="uid://cj3tdbbxc2nre" path="res://levels/docks/docks.png" id="2_i3pih"]
 [ext_resource type="PackedScene" uid="uid://c6qfmkkpmiwb5" path="res://characters/player/player_character.tscn" id="3_7yf1e"]
+[ext_resource type="PackedScene" uid="uid://bir2omwtdqfxq" path="res://characters/vendors/dagny.tscn" id="3_i3pih"]
+
+[sub_resource type="Animation" id="Animation_jqrdo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FadeBackground:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_i3pih"]
+resource_name = "fade_transition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FadeBackground:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jqrdo"]
+_data = {
+&"RESET": SubResource("Animation_jqrdo"),
+&"fade_transition": SubResource("Animation_i3pih")
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_i3pih"]
 
 [node name="DocksStart" type="Control"]
 layout_mode = 3
@@ -13,11 +52,38 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ypo6y")
 
-[node name="IntroCharacter" parent="." instance=ExtResource("2_wcxyk")]
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i3pih")
+expand_mode = 3
+
+[node name="Dagny" parent="." instance=ExtResource("3_i3pih")]
 unique_name_in_owner = true
-position = Vector2(1082, 331)
-_char_name = "Dagny"
+position = Vector2(1224, 339)
+offset = Vector2(-148, -5)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("3_7yf1e")]
 unique_name_in_owner = true
 position = Vector2(68, 339)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../Background")
+libraries = {
+&"": SubResource("AnimationLibrary_jqrdo")
+}
+
+[node name="FadeBackground" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_i3pih")
