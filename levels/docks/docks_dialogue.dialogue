@@ -1,11 +1,23 @@
+using DialogueGlobals
+using PlayerGlobals
+
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+{{get_character_name()}}: [[Greetings|Hello there|Hey]], I hear you have something you want to sell?
+{{mc_name}}: {{action}}{{mc_name}} looks down at his hand holding the amulet.{{action_end}}[p]I guess...[/p]
+{{get_character_name()}}: [[Well then?|What are you waiting for?]] Let me see it.
+{{mc_name}}: {{action}} Hesitantly, {{mc_name}} pauses for a second, thinking how to describe the amulet. {{action_end}}
+- Oversell it =>< oversell_amulet
+- Be honest =>< be_honest
+=> END
+
+~ oversell_amulet
+{{mc_name}}: A timeless relic... This amulet right here was awared to Sir William after the victory of Elderstock Keep. It has been passed down his linage for generations!
+{{get_character_name()}}: Do you take me for a fool? I know this amulet was given to the residents of Longburn a few years back. I'll give you 20, you're lucky I'm not kicking you out.
+do add_money(20)
+=> END
+
+~ be_honest
+{{mc_name}}: A silver amulet given to us residents of Longburn for the invaluable support we provided in the defense of the valley. It's priceless for me, unfortunately I need the money.
+{{get_character_name()}}: I appreciate your honesty. I'll give you 35 for that amulet.
+do add_money(35)
 => END

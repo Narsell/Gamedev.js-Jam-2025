@@ -13,6 +13,9 @@ enum NEGOTIATOR_TYPE { SUCKER, NAIVE, AVERAGE, TOUGH, HARD }
 
 var _current_rapport : float = _rapport_floor
 
+func get_character_name() -> String:
+	return _char_name
+
 func _lower_rapport() -> void:
 	var rapport_decrement := 0.1
 	if _negotiator_type == NEGOTIATOR_TYPE.HARD:

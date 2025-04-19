@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ypo6y")
 
-[node name="BaseCharacter" parent="." instance=ExtResource("2_wcxyk")]
+[node name="IntroCharacter" parent="." instance=ExtResource("2_wcxyk")]
 unique_name_in_owner = true
 position = Vector2(1082, 331)
 _char_name = "Thanos"
