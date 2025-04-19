@@ -16,17 +16,18 @@ var _current_rapport : float = _rapport_floor
 func get_character_name() -> String:
 	return _char_name
 
-func _lower_rapport() -> void:
+func lower_rapport() -> void:
 	var rapport_decrement := 0.1
 	if _negotiator_type == NEGOTIATOR_TYPE.HARD:
 		rapport_decrement = 0.2
 	_current_rapport = clampf(_current_rapport - rapport_decrement, _rapport_floor, 1.0)
 	
-func _increase_rapport() -> void:
-	var rapport_increment := 0.1
+func increase_rapport(amount : float = 0.1) -> void:
+	var rapport_increment := amount
 	if _negotiator_type == NEGOTIATOR_TYPE.SUCKER:
 		rapport_increment = 0.2
 	_current_rapport = clampf(_current_rapport + rapport_increment, _rapport_floor, 1.0)
+	print(_char_name + ": Increased rapport to " + str(_current_rapport))
 
 func _get_acceptable_price(item : BaseItem) -> float:
 	var low_middle := item.get_low_middle_point_market_rate()
@@ -46,7 +47,7 @@ func _calculate_counter_offer(item : BaseItem) -> CounterOffer:
 	var counter_offer : CounterOffer = CounterOffer.new(0.0)
 	if _negotiator_type >= NEGOTIATOR_TYPE.TOUGH:
 		counter_offer.price = item.get_high_middle_point_market_rate()
-		_lower_rapport()
+		lower_rapport()
 	elif _negotiator_type == NEGOTIATOR_TYPE.AVERAGE:
 		counter_offer.price = _get_acceptable_price(item)
 	elif _negotiator_type <= NEGOTIATOR_TYPE.NAIVE:
@@ -64,7 +65,7 @@ func hear_offer(offer: Offer) -> OfferResult:
 		var possitive_diff: = acceptable_price - offer.offered_price
 		if possitive_diff > _percent_to_increase_rapport or _negotiator_type <= NEGOTIATOR_TYPE.NAIVE:
 			offer_result.DEAL
-			_increase_rapport()
+			increase_rapport()
 			
 	# Rapport reached 0, this character is mad as fuck.
 	if is_equal_approx(_current_rapport, 0.0):

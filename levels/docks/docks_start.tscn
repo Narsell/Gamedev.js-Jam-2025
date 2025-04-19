@@ -16,7 +16,7 @@ script = ExtResource("1_ypo6y")
 [node name="IntroCharacter" parent="." instance=ExtResource("2_wcxyk")]
 unique_name_in_owner = true
 position = Vector2(1082, 331)
-_char_name = "Thanos"
+_char_name = "Dagny"
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("3_7yf1e")]
 unique_name_in_owner = true

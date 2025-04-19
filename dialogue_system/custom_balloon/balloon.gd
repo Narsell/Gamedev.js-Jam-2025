@@ -137,7 +137,7 @@ func next(next_id: String) -> void:
 	
 ## Set the character label and dialogue position depending on if its the mc speaking or not.
 func adjust_dialog_panel() -> void:
-	if character_label.text == PlayerGlobals.mc_name:
+	if character_label.text == GameState.mc_name:
 		dialogue_panel.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
 	else:
 		dialogue_panel.size_flags_horizontal = Control.SIZE_SHRINK_END

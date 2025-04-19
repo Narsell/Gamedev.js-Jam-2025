@@ -1,23 +1,28 @@
-using DialogueGlobals
-using PlayerGlobals
+using DialogueUtils
+using GameState
 
 ~ start
-{{get_character_name()}}: [[Greetings|Hello there|Hey]], I hear you have something you want to sell?
-{{mc_name}}: {{action}}{{mc_name}} looks down at his hand holding the amulet.{{action_end}}[p]I guess...[/p]
-{{get_character_name()}}: [[Well then?|What are you waiting for?]] Let me see it.
-{{mc_name}}: {{action}} Hesitantly, {{mc_name}} pauses for a second, thinking how to describe the amulet. {{action_end}}
-- Oversell it =>< oversell_amulet
-- Be honest =>< be_honest
+{{get_character_name()}}: You’ve got something to sell?
+{{mc_name}}: {{action}}{{mc_name}} lowers his gaze, his fingers tightening around the amulet.{{action_end}}[p]Aye... I’ve got summat.[/p]
+{{get_character_name()}}: [[Go on, let’s have a look.|Let us see it.|Waste not my time... Show it.]]
+{{mc_name}}: {{action}} {{mc_name}} hesitates, the weight of memory stirring as he studies the silver gleam in his hand. {{action_end}}
+- Speak grandly of its worth =>< oversell_amulet
+- Speak truthfully =>< be_honest
 => END
 
 ~ oversell_amulet
-{{mc_name}}: A timeless relic... This amulet right here was awared to Sir William after the victory of Elderstock Keep. It has been passed down his linage for generations!
-{{get_character_name()}}: Do you take me for a fool? I know this amulet was given to the residents of Longburn a few years back. I'll give you 20, you're lucky I'm not kicking you out.
-do add_money(20)
+{{mc_name}}: A relic of ages past… This very amulet was awarded to Sir William, hero of Elderstock Keep, and passed down his noble line. Some say it brings fortune to those who dare wear it.
+{{get_character_name()}}: You take me for a dullard? Every man and his dog in Longburn was handed one such trinket when the War of the Dummies drew to its end. You’re not the first to try and pass it off as some noble’s keepsake.
+{{get_character_name()}}: I’ll give you twenty groats. And that’s me bein’ generous.
+do add_player_money(20)
 => END
 
 ~ be_honest
-{{mc_name}}: A silver amulet given to us residents of Longburn for the invaluable support we provided in the defense of the valley. It's priceless for me, unfortunately I need the money.
-{{get_character_name()}}: I appreciate your honesty. I'll give you 35 for that amulet.
-do add_money(35)
+{{mc_name}}: After the war, King Henry gave these to the folk of Longburn. A mark of thanks, he said, for standing fast when the valley near fell.
+{{mc_name}}: {{action}}{{mc_name}} takes a deep breath. {{action_end}} [p]That was the last gift I received from the hand of my king. And the last thing I still carry from that life.[/p] 
+{{get_character_name()}}: Hmph... You’d be shocked how many come in here tryin’ to dress up that same story in fine words and old names. Thinkin’ I’ll pay more if they say “sir” and “keep” and “legend”.
+{{get_character_name()}}: {{action}}{{get_character_name()}} gives {{mc_name}} a nod, hand resting briefly on his shoulder.{{action_end}}[p]But you’re honest, and I’ll not fault a man for that.[/p]
+do increase_rapport(0.2)
+{{get_character_name()}}: Thirty-five groats. Take it or leave it.
+do add_player_money(35)
 => END
