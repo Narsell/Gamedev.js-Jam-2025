@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3dfn5kdlf0yb"]
+
+[ext_resource type="PackedScene" uid="uid://b86fx1x2k2ovl" path="res://levels/docks/docks_start.tscn" id="1_f3sb7"]
+
+[node name="World" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DocksStart" parent="." instance=ExtResource("1_f3sb7")]
+layout_mode = 1

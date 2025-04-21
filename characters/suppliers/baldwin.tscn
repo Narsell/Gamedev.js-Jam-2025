@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://msjkfuw0c3i8"]
+
+[ext_resource type="PackedScene" uid="uid://ct0mtlyuhgn83" path="res://characters/base_character.tscn" id="1_rdw8y"]
+[ext_resource type="Texture2D" uid="uid://duv8t6tnigdy2" path="res://characters/suppliers/baldwin.png" id="2_r7c7d"]
+
+[node name="Baldwin" instance=ExtResource("1_rdw8y")]
+position = Vector2(0, 0.5)
+texture = ExtResource("2_r7c7d")
+offset = Vector2(-2050, -2800)
+flip_h = false
+_char_name = "Baldwin"

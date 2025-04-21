@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://b86fx1x2k2ovl"]
 
 [ext_resource type="Script" uid="uid://b2webots1x2f1" path="res://levels/docks/docks_start.gd" id="1_ypo6y"]
-[ext_resource type="Texture2D" uid="uid://cj3tdbbxc2nre" path="res://levels/docks/docks.png" id="2_i3pih"]
+[ext_resource type="Texture2D" uid="uid://cj3tdbbxc2nre" path="res://levels/common/docks.png" id="2_i3pih"]
 [ext_resource type="PackedScene" uid="uid://c6qfmkkpmiwb5" path="res://characters/player/player_character.tscn" id="3_7yf1e"]
-[ext_resource type="PackedScene" uid="uid://bir2omwtdqfxq" path="res://characters/vendors/dagny.tscn" id="3_i3pih"]
+[ext_resource type="PackedScene" uid="uid://b0ss3nwo6i8vx" path="res://characters/vendors/dagny.tscn" id="3_i3pih"]
 
 [sub_resource type="Animation" id="Animation_jqrdo"]
 length = 0.001
@@ -64,12 +64,13 @@ expand_mode = 3
 
 [node name="Dagny" parent="." instance=ExtResource("3_i3pih")]
 unique_name_in_owner = true
-position = Vector2(1224, 339)
+position = Vector2(963, 435)
 offset = Vector2(-148, -5)
+_char_name = "NO_NAME"
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("3_7yf1e")]
 unique_name_in_owner = true
-position = Vector2(68, 339)
+position = Vector2(196, 436.782)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true

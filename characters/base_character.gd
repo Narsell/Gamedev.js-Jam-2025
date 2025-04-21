@@ -5,6 +5,7 @@ class_name BaseCharacter
 enum NEGOTIATOR_TYPE { SUCKER, NAIVE, AVERAGE, TOUGH, HARD }
 #endregion
 
+
 @export_group("Character Traits")
 @export var _char_name : String = "NO_NAME"
 @export var _negotiator_type : NEGOTIATOR_TYPE = NEGOTIATOR_TYPE.AVERAGE
@@ -13,9 +14,26 @@ enum NEGOTIATOR_TYPE { SUCKER, NAIVE, AVERAGE, TOUGH, HARD }
 @export_range(0, 0.3, 0.1) var _percent_to_increase_rapport : float = 0.1
 
 var _current_rapport : float = _rapport_floor
+var _data : CharacterData
+
+func _init() -> void:
+	_data = CharacterData.new(_char_name, _negotiator_type, _rapport_floor, _percent_to_increase_rapport)
+
+func update_data(char_data : CharacterData) -> void:
+	_data = char_data
+	_char_name = char_data.name
+	_negotiator_type = char_data.negotiator_type
+	_rapport_floor = char_data.rapport_floor
+	_percent_to_increase_rapport = char_data.perc_to_increase_rapport
+	
+func _exit_tree() -> void:
+	GameState.save_character_data(self)
 
 func get_character_name() -> String:
 	return _char_name
+	
+func get_data() -> CharacterData:
+	return _data
 
 func lower_rapport() -> void:
 	var rapport_decrement := 0.1
