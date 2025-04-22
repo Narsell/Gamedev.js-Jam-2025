@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bq5oek2ei8wa8"
+path="res://.godot/imported/Equip Charm A.wav-c4dd7e463f3d4521792c27fe0c5a092a.sample"
+
+[deps]
+
+source_file="res://audio/sfx/items/Equip Charm A.wav"
+dest_files=["res://.godot/imported/Equip Charm A.wav-c4dd7e463f3d4521792c27fe0c5a092a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

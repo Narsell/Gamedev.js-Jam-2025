@@ -66,7 +66,6 @@ expand_mode = 3
 unique_name_in_owner = true
 position = Vector2(963, 435)
 offset = Vector2(-148, -5)
-_char_name = "NO_NAME"
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("3_7yf1e")]
 unique_name_in_owner = true

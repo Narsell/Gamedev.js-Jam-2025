@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cs6pv3u4qr44m"
+path="res://.godot/imported/Potion Open B.wav-9b0540ec5996f8f01197c78d9da9c9de.sample"
+
+[deps]
+
+source_file="res://audio/sfx/items/Potion Open B.wav"
+dest_files=["res://.godot/imported/Potion Open B.wav-9b0540ec5996f8f01197c78d9da9c9de.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

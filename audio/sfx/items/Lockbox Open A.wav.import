@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://de14c175jmsu7"
+path="res://.godot/imported/Lockbox Open A.wav-24df10d6599665e3a683fd03d2033aa0.sample"
+
+[deps]
+
+source_file="res://audio/sfx/items/Lockbox Open A.wav"
+dest_files=["res://.godot/imported/Lockbox Open A.wav-24df10d6599665e3a683fd03d2033aa0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dwl617kp6k3ue"
+path="res://.godot/imported/Black Smith Tool B.wav-74bf703f0e26123d4e20cd6307b06ce2.sample"
+
+[deps]
+
+source_file="res://audio/sfx/items/Black Smith Tool B.wav"
+dest_files=["res://.godot/imported/Black Smith Tool B.wav-74bf703f0e26123d4e20cd6307b06ce2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

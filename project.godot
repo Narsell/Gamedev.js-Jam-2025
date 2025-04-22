@@ -15,11 +15,16 @@ run/main_scene="uid://debwoww4x115m"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://audio/default_bus_layout.tres"
+
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GameState="*res://globals/game_state.gd"
 DialogueUtils="*res://globals/dialogue_utils.gd"
+AudioGlobal="*res://globals/audio_global.gd"
 
 [dialogue_manager]
 
@@ -28,6 +33,14 @@ runtime/balloon_path="res://dialogue_system/custom_balloon/balloon.tscn"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[input]
+
+oper_menu={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"location":0,"echo":false,"script":null)
+]
+}
 
 [internationalization]
 

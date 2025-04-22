@@ -3,6 +3,7 @@ extends Control
 @onready var intro_character : BaseCharacter = %Dagny
 @onready var anim_player : AnimationPlayer = %AnimationPlayer
 
+
 var docks_dialogue_res = preload("res://levels/docks/docks_dialogue.dialogue")
 
 signal venuto_leaves_intro_shop
@@ -10,6 +11,7 @@ signal venuto_leaves_intro_shop
 func _ready() -> void:
 	var dialogueNode := DialogueManager.show_dialogue_balloon(docks_dialogue_res, "start", [intro_character]);
 	venuto_leaves_intro_shop.connect(_on_venuto_leaves_intro_shop)
+	AudioGlobal.current_place = "Docks"
 	
 func _on_venuto_leaves_intro_shop() -> void:
 	anim_player.play("fade_transition")

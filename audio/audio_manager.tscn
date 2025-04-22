@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://c1ej1hxrbefj8"]
+
+[ext_resource type="Script" uid="uid://cm36o2v3ob42o" path="res://audio/audio_manager.gd" id="1_mhfhn"]
+[ext_resource type="AudioStream" uid="uid://dcrdy0vw25lq8" path="res://audio/music/greensleeves.wav" id="2_i1k7u"]
+[ext_resource type="AudioStream" uid="uid://btsj0xdi45431" path="res://audio/music/greensleeves_nobell.wav" id="3_8j4p3"]
+[ext_resource type="AudioStream" uid="uid://b5dlxi8vuu4e6" path="res://audio/music/the_house.wav" id="4_hlghp"]
+[ext_resource type="AudioStream" uid="uid://cm1bd1k55jb4" path="res://audio/music/the_house_2.wav" id="5_6wlj3"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_frbb0"]
+shuffle = true
+stream_count = 2
+stream_0 = ExtResource("2_i1k7u")
+stream_1 = ExtResource("3_8j4p3")
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_p5dnv"]
+shuffle = true
+stream_count = 2
+stream_0 = ExtResource("4_hlghp")
+stream_1 = ExtResource("5_6wlj3")
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_qn5yt"]
+clip_count = 2
+clip_0/name = &"DocksMusic"
+clip_0/stream = SubResource("AudioStreamPlaylist_frbb0")
+clip_0/auto_advance = 0
+clip_1/name = &"MenuMusic"
+clip_1/stream = SubResource("AudioStreamPlaylist_p5dnv")
+clip_1/auto_advance = 0
+_transitions = {
+Vector2i(0, 1): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(1, 0): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 0
+}
+}
+
+[node name="AudioManager" type="Node" node_paths=PackedStringArray("bg_music_player")]
+script = ExtResource("1_mhfhn")
+bg_music_player = NodePath("BGMusicPlayer")
+
+[node name="BGMusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamInteractive_qn5yt")
+autoplay = true
+bus = &"Music"
+playback_type = 1

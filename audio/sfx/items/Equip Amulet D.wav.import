@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://my3mypyso8fd"
+path="res://.godot/imported/Equip Amulet D.wav-8384aa9721de7760888a138317d6a0df.sample"
+
+[deps]
+
+source_file="res://audio/sfx/items/Equip Amulet D.wav"
+dest_files=["res://.godot/imported/Equip Amulet D.wav-8384aa9721de7760888a138317d6a0df.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
