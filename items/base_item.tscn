@@ -1,54 +1,7 @@
-<<<<<<< HEAD
-[gd_scene load_steps=16 format=3 uid="uid://dtaaykvj4f4a3"]
-
-[ext_resource type="Script" uid="uid://c5ca5yot87x15" path="res://items/base_item.gd" id="1_m53hc"]
-[ext_resource type="AudioStream" uid="uid://wtk0r7xa221n" path="res://audio/sfx/items/Potion Equip A.wav" id="2_05uhd"]
-[ext_resource type="AudioStream" uid="uid://dsmal674bv7xp" path="res://audio/sfx/items/Potion Equip B.wav" id="3_wxlmp"]
-[ext_resource type="AudioStream" uid="uid://bwwhnmkab1ong" path="res://audio/sfx/items/Potion Equip C.wav" id="4_fl0mr"]
-[ext_resource type="AudioStream" uid="uid://brfh056u4tmti" path="res://audio/sfx/items/Potion Handle A.wav" id="5_8o25c"]
-[ext_resource type="AudioStream" uid="uid://bgvfl34xlbp2p" path="res://audio/sfx/items/Potion Handle B.wav" id="6_unes7"]
-[ext_resource type="AudioStream" uid="uid://b5utxsp45fmw6" path="res://audio/sfx/items/Potion Handle C.wav" id="7_e6ujy"]
-[ext_resource type="AudioStream" uid="uid://csdwcalr3nk5m" path="res://audio/sfx/items/Unequip Item A.wav" id="8_56lax"]
-[ext_resource type="AudioStream" uid="uid://bcwyfg4xwd68d" path="res://audio/sfx/items/Unequip Item B.wav" id="9_bnggd"]
-[ext_resource type="AudioStream" uid="uid://db5y383xnouhl" path="res://audio/sfx/items/Unequip Item C.wav" id="10_0j1b4"]
-[ext_resource type="AudioStream" uid="uid://dqkthfjy63lvf" path="res://audio/sfx/items/Unequip Item D.wav" id="11_nutrj"]
-
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_skf22"]
-stream_count = 3
-stream_0 = ExtResource("2_05uhd")
-stream_1 = ExtResource("3_wxlmp")
-stream_2 = ExtResource("4_fl0mr")
-
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_s1g5x"]
-stream_count = 3
-stream_0 = ExtResource("5_8o25c")
-stream_1 = ExtResource("6_unes7")
-stream_2 = ExtResource("7_e6ujy")
-
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_u2elr"]
-stream_count = 4
-stream_0 = ExtResource("8_56lax")
-stream_1 = ExtResource("9_bnggd")
-stream_2 = ExtResource("10_0j1b4")
-stream_3 = ExtResource("11_nutrj")
-
-[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ytelj"]
-clip_count = 3
-clip_0/name = &"pickup"
-clip_0/stream = SubResource("AudioStreamPlaylist_skf22")
-clip_0/auto_advance = 0
-clip_1/name = &"handle"
-clip_1/stream = SubResource("AudioStreamPlaylist_s1g5x")
-clip_1/auto_advance = 0
-clip_2/name = &"putdown"
-clip_2/stream = SubResource("AudioStreamPlaylist_u2elr")
-clip_2/auto_advance = 0
-=======
 [gd_scene load_steps=3 format=3 uid="uid://dtaaykvj4f4a3"]
 
 [ext_resource type="Script" uid="uid://c5ca5yot87x15" path="res://items/base_item.gd" id="1_m53hc"]
 [ext_resource type="Texture2D" uid="uid://xaqbmesukr0e" path="res://icon.svg" id="1_yksll"]
->>>>>>> e26a486734ecaf0dcd031d5c4a7726bb27abd572
 
 [node name="BaseItem" type="TextureRect"]
 offset_right = 128.0
@@ -56,7 +9,3 @@ offset_bottom = 128.0
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_yksll")
 script = ExtResource("1_m53hc")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamInteractive_ytelj")
-bus = &"sfx"
