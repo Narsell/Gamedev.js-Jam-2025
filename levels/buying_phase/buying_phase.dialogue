@@ -1,0 +1,25 @@
+using DialogueUtils
+using GameState
+
+~ start
+if not knows_main_character:
+	{{action}} A new person enters the booth...{{action_end}}
+	{{get_character_name()}}: Heyo there, I've got some goods to sell.
+	{{mc_name}}: Ah, you've come to the right place.
+	{{mc_name}}: Name's Venuto, what should I call you?
+	{{get_character_name()}}: {{action}}{{get_character_name()}} nods{{action_end}} [p]{{get_character_name()}}'s fine.[/p]
+	{{mc_name}}: Well, let us see what you brought.
+else:
+	if get_rapport() == 1.0:
+		{{get_character_name()}}: Ah, {{mc_name}}. Good to see you, friend.
+		{{mc_name}}: Good to see you too, {{get_character_name()}}.
+		{{mc_name}}: Well, let us see what you brought.
+	elif get_rapport() >= 0.5 and get_rapport() < 1.0:
+		{{get_character_name()}}: Hello there! busy day huh?
+		{{mc_name}}: Can't complain, looks to be a good day today.
+		{{mc_name}}: Well, let us see what you brought.
+	else:
+		{{get_character_name()}}: Hello once again, I've got some goods to sell.
+		{{mc_name}}: Of course, let's see...
+do chit_chat_ended.emit()
+=> END

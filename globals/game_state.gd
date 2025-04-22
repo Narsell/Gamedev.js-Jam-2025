@@ -2,10 +2,19 @@ extends Node
 
 # This is to store game state information that is supposed to persist between different scenes.
 
+#region player
+
+var mc_name : String = "Venuto"
+var player_money : float = 0
+
+#endregion
+
+#region characters
 enum NPC_TYPE { SUPPLIER, VENDOR }
 
 @onready var _supplier_characters : Array = [
-	preload("res://characters/suppliers/baldwin.tscn")
+	preload("res://characters/suppliers/baldwin.tscn"),
+	preload("res://characters/suppliers/hayden.tscn")
 ]
 
 @onready var _vendor_characters : Array = [
@@ -18,10 +27,6 @@ enum NPC_TYPE { SUPPLIER, VENDOR }
 }
 
 var _character_data : Dictionary 
-
-var mc_name : String = "Venuto"
-var player_money : float = 0
-
 var intro_was_honest : bool = false
 
 func add_player_money(amount : int) -> void:
@@ -44,3 +49,4 @@ func save_character_data(char_node : BaseCharacter) -> void:
 	_character_data[char_name] = char_node.get_data()
 	if not _character_data.find_key(char_name):
 		print("Saved new character data for character '" + char_name + "'")
+#endregion

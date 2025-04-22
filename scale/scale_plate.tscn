@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr44pdjsqvqcb"]
+
+[ext_resource type="Texture2D" uid="uid://bm4ays0q502ys" path="res://scale/scale_plate.png" id="1_ytv3q"]
+[ext_resource type="Script" uid="uid://ck5d6g66ykyqd" path="res://scale/scale_plate.gd" id="2_tere6"]
+
+[node name="Weight_Left" type="TextureRect"]
+auto_translate_mode = 2
+offset_right = 100.0
+offset_bottom = 100.0
+pivot_offset = Vector2(52, 1)
+texture = ExtResource("1_ytv3q")
+script = ExtResource("2_tere6")
