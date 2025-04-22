@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://n0t8sh1dd3ix"]
+
+[ext_resource type="PackedScene" uid="uid://dtaaykvj4f4a3" path="res://items/base_item.tscn" id="1_opikc"]
+[ext_resource type="Texture2D" uid="uid://f04ekw23x51r" path="res://items/common/veg_bowl.png" id="2_if1wq"]
+
+[node name="BaseItem" instance=ExtResource("1_opikc")]
+texture = ExtResource("2_if1wq")

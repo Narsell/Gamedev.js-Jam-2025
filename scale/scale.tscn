@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://pq5hq0e26puj"]
+
+[ext_resource type="Texture2D" uid="uid://c10oxytke341o" path="res://scale/Base.png" id="1_bicwd"]
+[ext_resource type="Script" uid="uid://d2cw0wg7y0ra5" path="res://scale/scale.gd" id="1_pywi1"]
+[ext_resource type="Texture2D" uid="uid://dwtcmegyrnel" path="res://scale/Rod.png" id="2_pywi1"]
+[ext_resource type="PackedScene" uid="uid://dr44pdjsqvqcb" path="res://scale/scale_plate.tscn" id="4_cel0x"]
+
+[node name="Scale" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+pivot_offset = Vector2(163, 26)
+script = ExtResource("1_pywi1")
+
+[node name="Base" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_bicwd")
+
+[node name="Rod" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = 350.0
+offset_bottom = 256.0
+pivot_offset = Vector2(164, 24)
+texture = ExtResource("2_pywi1")
+
+[node name="LeftPos" type="Marker2D" parent="Rod"]
+position = Vector2(56, 27)
+
+[node name="RightPos" type="Marker2D" parent="Rod"]
+position = Vector2(292, 27)
+
+[node name="Weight_Left" parent="." node_paths=PackedStringArray("marker_to_follow") instance=ExtResource("4_cel0x")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 4.0
+offset_top = 26.0
+offset_right = 104.0
+offset_bottom = 126.0
+marker_to_follow = NodePath("../Rod/LeftPos")
+
+[node name="Weight_Right" parent="." node_paths=PackedStringArray("marker_to_follow") instance=ExtResource("4_cel0x")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 240.0
+offset_top = 26.0
+offset_right = 340.0
+offset_bottom = 126.0
+marker_to_follow = NodePath("../Rod/RightPos")

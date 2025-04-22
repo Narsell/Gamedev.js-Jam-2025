@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=16 format=3 uid="uid://dtaaykvj4f4a3"]
 
 [ext_resource type="Script" uid="uid://c5ca5yot87x15" path="res://items/base_item.gd" id="1_m53hc"]
@@ -42,14 +43,18 @@ clip_1/auto_advance = 0
 clip_2/name = &"putdown"
 clip_2/stream = SubResource("AudioStreamPlaylist_u2elr")
 clip_2/auto_advance = 0
+=======
+[gd_scene load_steps=3 format=3 uid="uid://dtaaykvj4f4a3"]
 
-[node name="BaseItem" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Script" uid="uid://c5ca5yot87x15" path="res://items/base_item.gd" id="1_m53hc"]
+[ext_resource type="Texture2D" uid="uid://xaqbmesukr0e" path="res://icon.svg" id="1_yksll"]
+>>>>>>> e26a486734ecaf0dcd031d5c4a7726bb27abd572
+
+[node name="BaseItem" type="TextureRect"]
+offset_right = 128.0
+offset_bottom = 128.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_yksll")
 script = ExtResource("1_m53hc")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
