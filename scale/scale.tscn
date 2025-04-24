@@ -15,6 +15,7 @@ script = ExtResource("1_pywi1")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("1_bicwd")
 
 [node name="Rod" type="TextureRect" parent="."]
@@ -23,6 +24,7 @@ layout_mode = 1
 offset_right = 350.0
 offset_bottom = 256.0
 pivot_offset = Vector2(164, 24)
+mouse_filter = 2
 texture = ExtResource("2_pywi1")
 
 [node name="LeftPos" type="Marker2D" parent="Rod"]

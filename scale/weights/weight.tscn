@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bbq6mfiulvcjv" path="res://scale/weights/weight.gd" id="1_tyqes"]
 
 [node name="Weight" type="TextureRect"]
-custom_minimum_size = Vector2(45, 25)
+custom_minimum_size = Vector2(40, 40)
 offset_right = 30.0
 offset_bottom = 10.0
 texture = ExtResource("1_t8ysc")

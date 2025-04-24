@@ -10,7 +10,8 @@ extends Control
 @export_range(0.0, 45.0, 0.5, "suffix:degs") var _max_angle : float = 35.0
 
 func _rod_tween_finished() -> void:
-	print("Finished tween!")
+	#print("Finished tween!")
+	pass
 
 func _calculate_rod_angle() -> void:
 	var left_weight : float = plate_left.get_weight()

@@ -1,7 +1,7 @@
 extends Control
 
 @onready var _supplier_position : Marker2D = %SupplierPosition
-@onready var _item_position : Marker2D = %ItemPosition
+@onready var _item_container : ItemContainer = %ItemContainer
 
 var _dialogue_res = preload("res://levels/buying_phase/buying_phase.dialogue")
 var _current_char_node : BaseCharacter
@@ -25,9 +25,8 @@ func _ready() -> void:
 	
 func _on_chit_chat_ended() -> void:
 	_current_offer = _current_char_node.offer_random_item()
-	get_tree().current_scene.add_child(_current_offer)
-	_current_offer.position = _item_position.position
-	
+	_item_container.get_grid_container_node().add_child(_current_offer)
+
 func _barter_for_item_offered(price : float) -> void:
 	var offer : Offer = Offer.new()
 	offer.item = _current_offer

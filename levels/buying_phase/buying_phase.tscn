@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://csbk0gmqv77fw"]
+[gd_scene load_steps=8 format=3 uid="uid://csbk0gmqv77fw"]
 
 [ext_resource type="Script" uid="uid://cb5tdaw5rbaf1" path="res://levels/buying_phase/buying_phase.gd" id="1_mr06o"]
 [ext_resource type="PackedScene" uid="uid://c6qfmkkpmiwb5" path="res://characters/player/player_character.tscn" id="1_v0lui"]
 [ext_resource type="Texture2D" uid="uid://gc2jlx1uudxg" path="res://levels/common/docks.png" id="1_yi1l1"]
 [ext_resource type="PackedScene" uid="uid://pq5hq0e26puj" path="res://scale/scale.tscn" id="5_brsp7"]
+[ext_resource type="PackedScene" uid="uid://dh341jww3l3d1" path="res://scale/scale_item_container.tscn" id="6_hsts2"]
 [ext_resource type="Texture2D" uid="uid://pgy4enrqlq4a" path="res://scale/weights/plate.png" id="6_ox5nk"]
 [ext_resource type="PackedScene" uid="uid://d1fjrbkswaxy" path="res://scale/weights/weight.tscn" id="6_wqqg3"]
 
@@ -33,10 +34,6 @@ position = Vector2(195, 436)
 unique_name_in_owner = true
 position = Vector2(1079, 603)
 
-[node name="ItemPosition" type="Marker2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(776, 568)
-
 [node name="Table" type="TextureRect" parent="."]
 modulate = Color(0.151276, 0.151276, 0.151276, 1)
 layout_mode = 0
@@ -46,6 +43,45 @@ offset_right = 408.0
 offset_bottom = 553.0
 scale = Vector2(5.49703, 1.85314)
 texture = ExtResource("6_ox5nk")
+
+[node name="ItemContainer" parent="." instance=ExtResource("6_hsts2")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 712.0
+offset_top = 536.0
+offset_right = 840.0
+offset_bottom = 584.0
+_supported_type = 1
+
+[node name="WeightContainer" parent="." instance=ExtResource("6_hsts2")]
+layout_mode = 1
+offset_left = 320.0
+offset_top = 512.0
+offset_right = 468.0
+offset_bottom = 592.0
+
+[node name="GridContainer" parent="WeightContainer" index="0"]
+offset_left = -72.0
+offset_top = -39.0
+offset_right = 72.0
+offset_bottom = 39.0
+theme_override_constants/v_separation = -7
+columns = 2
+
+[node name="1_lb_weight" parent="WeightContainer/GridContainer" index="0" instance=ExtResource("6_wqqg3")]
+layout_mode = 2
+
+[node name="3_lb_weight2" parent="WeightContainer/GridContainer" index="1" instance=ExtResource("6_wqqg3")]
+layout_mode = 2
+weight = 3
+
+[node name="5_lb_weight3" parent="WeightContainer/GridContainer" index="2" instance=ExtResource("6_wqqg3")]
+layout_mode = 2
+weight = 5
+
+[node name="8_lb_weight4" parent="WeightContainer/GridContainer" index="3" instance=ExtResource("6_wqqg3")]
+layout_mode = 2
+weight = 8
 
 [node name="Scale" parent="." instance=ExtResource("5_brsp7")]
 layout_mode = 1
@@ -62,42 +98,4 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.865, 0.865)
 
-[node name="Weights" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 45.0
-grow_vertical = 0
-
-[node name="1_lb_weight" parent="Weights" instance=ExtResource("6_wqqg3")]
-layout_mode = 2
-offset_left = 320.0
-offset_top = -40.0
-offset_right = 365.0
-offset_bottom = -15.0
-
-[node name="3_lb_weight2" parent="Weights" instance=ExtResource("6_wqqg3")]
-layout_mode = 2
-offset_left = 376.0
-offset_top = -40.0
-offset_right = 421.0
-offset_bottom = -15.0
-weight = 3
-
-[node name="5_lb_weight3" parent="Weights" instance=ExtResource("6_wqqg3")]
-layout_mode = 2
-offset_left = 432.0
-offset_top = -40.0
-offset_right = 477.0
-offset_bottom = -15.0
-weight = 5
-
-[node name="8_lb_weight4" parent="Weights" instance=ExtResource("6_wqqg3")]
-layout_mode = 2
-offset_left = 376.0
-offset_top = -72.0
-offset_right = 421.0
-offset_bottom = -47.0
-weight = 8
+[editable path="WeightContainer"]
