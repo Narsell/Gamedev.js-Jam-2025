@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://csbk0gmqv77fw"]
+[gd_scene load_steps=7 format=3 uid="uid://csbk0gmqv77fw"]
 
 [ext_resource type="Script" uid="uid://cb5tdaw5rbaf1" path="res://levels/buying_phase/buying_phase.gd" id="1_mr06o"]
 [ext_resource type="PackedScene" uid="uid://c6qfmkkpmiwb5" path="res://characters/player/player_character.tscn" id="1_v0lui"]
 [ext_resource type="Texture2D" uid="uid://gc2jlx1uudxg" path="res://levels/common/docks.png" id="1_yi1l1"]
 [ext_resource type="PackedScene" uid="uid://pq5hq0e26puj" path="res://scale/scale.tscn" id="5_brsp7"]
 [ext_resource type="Texture2D" uid="uid://pgy4enrqlq4a" path="res://scale/weights/plate.png" id="6_ox5nk"]
+[ext_resource type="PackedScene" uid="uid://d1fjrbkswaxy" path="res://scale/weights/weight.tscn" id="6_wqqg3"]
 
 [node name="BuyingPhase" type="Control"]
 layout_mode = 3
@@ -15,7 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mr06o")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,7 +35,7 @@ position = Vector2(1079, 603)
 
 [node name="ItemPosition" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(761, 526)
+position = Vector2(776, 568)
 
 [node name="Table" type="TextureRect" parent="."]
 modulate = Color(0.151276, 0.151276, 0.151276, 1)
@@ -47,50 +48,56 @@ scale = Vector2(5.49703, 1.85314)
 texture = ExtResource("6_ox5nk")
 
 [node name="Scale" parent="." instance=ExtResource("5_brsp7")]
-offset_left = 360.0
-offset_top = 347.0
-offset_right = 360.0
-offset_bottom = 347.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -248.0
+offset_right = -160.0
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 0
 scale = Vector2(0.865, 0.865)
 
 [node name="Weights" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 45.0
+grow_vertical = 0
 
-[node name="Weight" type="TextureRect" parent="Weights"]
-layout_mode = 0
-offset_left = 333.0
-offset_top = 495.0
-offset_right = 433.0
-offset_bottom = 575.0
-scale = Vector2(0.32, 0.32)
-texture = ExtResource("6_ox5nk")
+[node name="1_lb_weight" parent="Weights" instance=ExtResource("6_wqqg3")]
+layout_mode = 2
+offset_left = 320.0
+offset_top = -40.0
+offset_right = 365.0
+offset_bottom = -15.0
 
-[node name="Weight2" type="TextureRect" parent="Weights"]
-layout_mode = 0
-offset_left = 372.0
-offset_top = 495.0
-offset_right = 472.0
-offset_bottom = 575.0
-scale = Vector2(0.32, 0.32)
-texture = ExtResource("6_ox5nk")
+[node name="3_lb_weight2" parent="Weights" instance=ExtResource("6_wqqg3")]
+layout_mode = 2
+offset_left = 376.0
+offset_top = -40.0
+offset_right = 421.0
+offset_bottom = -15.0
+weight = 3
 
-[node name="Weight3" type="TextureRect" parent="Weights"]
-layout_mode = 0
-offset_left = 333.0
-offset_top = 518.0
-offset_right = 433.0
-offset_bottom = 598.0
-scale = Vector2(0.32, 0.32)
-texture = ExtResource("6_ox5nk")
+[node name="5_lb_weight3" parent="Weights" instance=ExtResource("6_wqqg3")]
+layout_mode = 2
+offset_left = 432.0
+offset_top = -40.0
+offset_right = 477.0
+offset_bottom = -15.0
+weight = 5
 
-[node name="Weight4" type="TextureRect" parent="Weights"]
-layout_mode = 0
-offset_left = 410.0
-offset_top = 495.0
-offset_right = 510.0
-offset_bottom = 575.0
-scale = Vector2(0.32, 0.32)
-texture = ExtResource("6_ox5nk")
+[node name="8_lb_weight4" parent="Weights" instance=ExtResource("6_wqqg3")]
+layout_mode = 2
+offset_left = 376.0
+offset_top = -72.0
+offset_right = 421.0
+offset_bottom = -47.0
+weight = 8

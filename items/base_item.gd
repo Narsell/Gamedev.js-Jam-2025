@@ -27,7 +27,6 @@ var _weight : int = 1.0
 
 func _init() -> void:
 	_weight = (randi() % max_possible_weight) + 1
-	print(self)
 
 func get_weight() -> int:
 	return _weight
@@ -48,22 +47,18 @@ func get_max_market_rate() -> float:
 	return (_market_buy_avg_rate * (1 + _delta_buy_rate))
 
 func _get_drag_data(at_position) -> Variant:
-	_preview_drag_texture = TextureRect.new()
-	_preview_drag_texture.texture = texture
-	_preview_drag_texture.expand_mode = 1
-	_preview_drag_texture.size = texture.get_size()
 	var preview = Control.new()
-	preview.add_child(_preview_drag_texture)
-	set_drag_preview(preview)
-	
+	var duplicated_node : BaseItem = self.duplicate()
+	duplicated_node._weight = _weight
+	set_drag_preview(duplicated_node)
 	return self
 	
 func _to_string() -> String:
 	var str : String = ""
 	str += ITEM_TYPE.keys()[item_type]
-	str += "\n\tWeight " + str(_weight)
-	str += "\n\tAvg Price " + str(_market_buy_avg_rate)
-	str += "\n\tMin Price " + str(get_min_market_rate())
-	str += "\n\tMax Price" + str(get_max_market_rate())
+	str += "\n\tWeight: " + str(_weight)
+	str += "\n\tAvg Price: " + str(_market_buy_avg_rate)
+	str += "\n\tMin Price: " + str(get_min_market_rate())
+	str += "\n\tMax Price: " + str(get_max_market_rate())
 	return str 
 	

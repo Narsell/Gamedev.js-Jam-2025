@@ -5,7 +5,6 @@
 
 [node name="BaseItem" type="TextureRect"]
 custom_minimum_size = Vector2(40, 40)
-scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_c43hp")
 expand_mode = 1
 script = ExtResource("1_m53hc")

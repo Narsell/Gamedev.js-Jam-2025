@@ -4,6 +4,5 @@
 [ext_resource type="Texture2D" uid="uid://f04ekw23x51r" path="res://items/common/veg_bowl.png" id="2_if1wq"]
 
 [node name="VegsAndFruits" instance=ExtResource("1_opikc")]
-scale = Vector2(1, 1)
 texture = ExtResource("2_if1wq")
 _market_buy_avg_rate = 35.0

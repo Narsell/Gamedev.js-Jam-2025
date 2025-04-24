@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1fjrbkswaxy"]
+
+[ext_resource type="Texture2D" uid="uid://pgy4enrqlq4a" path="res://scale/weights/plate.png" id="1_t8ysc"]
+[ext_resource type="Script" uid="uid://bbq6mfiulvcjv" path="res://scale/weights/weight.gd" id="1_tyqes"]
+
+[node name="Weight" type="TextureRect"]
+custom_minimum_size = Vector2(45, 25)
+offset_right = 30.0
+offset_bottom = 10.0
+texture = ExtResource("1_t8ysc")
+expand_mode = 1
+script = ExtResource("1_tyqes")
+
+[node name="LbDesc" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10 lb"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
