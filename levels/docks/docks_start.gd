@@ -3,7 +3,6 @@ extends Control
 @onready var intro_character : BaseCharacter = %Dagny
 @onready var anim_player : AnimationPlayer = %AnimationPlayer
 
-
 var docks_dialogue_res = preload("res://levels/docks/docks_dialogue.dialogue")
 
 signal venuto_leaves_intro_shop

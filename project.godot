@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Gamedevjs-Jam-2025"
-run/main_scene="uid://debwoww4x115m"
+run/main_scene="uid://b3dfn5kdlf0yb"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

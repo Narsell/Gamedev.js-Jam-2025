@@ -31,20 +31,23 @@ position = Vector2(56, 27)
 [node name="RightPos" type="Marker2D" parent="Rod"]
 position = Vector2(292, 27)
 
-[node name="Weight_Left" parent="." node_paths=PackedStringArray("marker_to_follow") instance=ExtResource("4_cel0x")]
+[node name="Plate_Left" parent="." node_paths=PackedStringArray("_marker_to_follow") instance=ExtResource("4_cel0x")]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 4.0
 offset_top = 26.0
 offset_right = 104.0
 offset_bottom = 126.0
-marker_to_follow = NodePath("../Rod/LeftPos")
+_marker_to_follow = NodePath("../Rod/LeftPos")
 
-[node name="Weight_Right" parent="." node_paths=PackedStringArray("marker_to_follow") instance=ExtResource("4_cel0x")]
+[node name="Plate_Right" parent="." node_paths=PackedStringArray("_marker_to_follow") instance=ExtResource("4_cel0x")]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 240.0
 offset_top = 26.0
 offset_right = 340.0
 offset_bottom = 126.0
-marker_to_follow = NodePath("../Rod/RightPos")
+_marker_to_follow = NodePath("../Rod/RightPos")
+
+[connection signal="weight_changed" from="Plate_Left" to="." method="_on_plate_left_weight_changed"]
+[connection signal="weight_changed" from="Plate_Right" to="." method="_on_plate_right_weight_changed"]

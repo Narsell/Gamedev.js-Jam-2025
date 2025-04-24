@@ -31,5 +31,7 @@ static var _item_scenes : Dictionary = {
 static func create_random_item_from_category(category : ITEM_CATEGORY) -> BaseItem:
 	var item_type = _available_items[category].pick_random()
 	var item_scene : PackedScene = _item_scenes[item_type]
-	var item_node : BaseItem = item_scene.instantiate()
+	var item_node = item_scene.instantiate()
+	print("Upon creation:")
+	print(item_node)
 	return item_node
