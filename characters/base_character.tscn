@@ -3,10 +3,8 @@
 [ext_resource type="Script" uid="uid://b1w7kvpgwn344" path="res://characters/base_character.gd" id="1_f78fl"]
 [ext_resource type="Texture2D" uid="uid://xaqbmesukr0e" path="res://icon.svg" id="2_xeerb"]
 
-[node name="BaseCharacter" type="Sprite2D"]
-position = Vector2(-4.76837e-07, -2.38419e-07)
+[node name="BaseCharacter" type="TextureRect"]
 scale = Vector2(0.06, 0.06)
 texture = ExtResource("2_xeerb")
-offset = Vector2(-66.6667, -66.6667)
 flip_h = true
 script = ExtResource("1_f78fl")

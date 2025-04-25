@@ -5,7 +5,39 @@ extends Node
 #region player
 
 var mc_name : String = "Venuto"
-var player_money : float = 0
+
+enum MONEY_TYPE { SILVER, GOLD }
+var player_money : Dictionary = {
+	MONEY_TYPE.SILVER : 0,
+	MONEY_TYPE.GOLD : 0
+}
+
+func add_player_money(amount : int, type : MONEY_TYPE) -> void:
+	if amount <= 0: return
+	if type == MONEY_TYPE.SILVER && player_money[type] + amount >= 100:
+		var overflow_gold : int = 0
+		var overflow_silver : int = 0
+		overflow_gold = (player_money[type] + amount) / 100
+		overflow_silver = player_money[type] + amount - (overflow_gold * 100)
+		player_money[MONEY_TYPE.GOLD] += overflow_gold
+		player_money[MONEY_TYPE.SILVER] += overflow_silver
+	else:
+		player_money[type] += amount
+	print("Current money: \n\tSilver: " + str(player_money[MONEY_TYPE.SILVER]) + "\n\tGold: " + str(player_money[MONEY_TYPE.GOLD]))
+
+func spend_player_money(amount : int, type : MONEY_TYPE) -> void:
+	if amount >= 0: return
+	if type == MONEY_TYPE.SILVER && player_money[type] + amount >= 100:
+		var overflow_gold : int = 0
+		var overflow_silver : int = 0
+		overflow_gold = (player_money[type] + amount) / 100
+		overflow_silver = player_money[type] + amount - (overflow_gold * 100)
+		player_money[MONEY_TYPE.GOLD] -= overflow_gold
+		player_money[MONEY_TYPE.SILVER] -= overflow_silver
+	else:
+		player_money[type] -= amount
+	print("Current money: \n\tSilver: " + str(player_money[MONEY_TYPE.SILVER]) + "\n\tGold: " + str(player_money[MONEY_TYPE.GOLD]))
+
 
 #endregion
 
@@ -29,10 +61,6 @@ enum NPC_TYPE { SUPPLIER, VENDOR }
 var _character_data : Dictionary 
 var intro_was_honest : bool = false
 
-func add_player_money(amount : int) -> void:
-	player_money = clamp(player_money + amount, player_money, player_money + amount)
-	print("Current money: ", player_money)
-	
 func get_random_character_node(type : NPC_TYPE) -> BaseCharacter:
 	var characters : Array = character_list[type]
 	var char_scene : PackedScene =  characters.pick_random()

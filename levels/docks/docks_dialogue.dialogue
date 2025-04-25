@@ -22,9 +22,9 @@ do venuto_leaves_intro_shop.emit()
 {{mc_name}}: A relic of ages past… This very amulet was awarded to Sir William, hero of Elderstock Keep, and passed down his noble line. Some say it brings fortune to those who dare wear it.
 {{get_character_name()}}: You take me for a dullard? Every man and his dog in Longburn was handed one such trinket when the War of the Dummies drew to its end. You’re not the first to try and pass it off as some noble’s keepsake.
 {{mc_name}}: {{action}}{{mc_name}} opens his eyes wide, frozen in place.{{action_end}}
-{{get_character_name()}}: I’ll give you twenty groats. And that’s me bein’ generous. Take it or leave it!
+{{get_character_name()}}: I’ll give you twenty pieces of silver. And that’s me bein’ generous. Take it or leave it!
 {{mc_name}}: {{action}}{{mc_name}} lets out a long, weary sigh, shoulders sagging as if burdened by penance. {{action_end}}[p] Aye, I'll take it. I'm sorry... I'm just trying to get by.[/p]
-do add_player_money(20)
+do add_player_money(20, MONEY_TYPE.SILVER)
 set intro_was_honest = false
 => END
 
@@ -34,9 +34,9 @@ set intro_was_honest = false
 {{get_character_name()}}: Hmph... You’d be shocked how many come in here tryin’ to dress up that same story in fine words and old names. Thinkin’ I’ll pay more if they say “sir” and “keep” and “legend”.
 {{get_character_name()}}: {{action}}{{get_character_name()}} gives {{mc_name}} a nod, hand resting briefly on his shoulder.{{action_end}}[p]But you’re honest, and I’ll not fault a man for that.[/p]
 do increase_rapport(0.2)
-{{get_character_name()}}: Thirty-five groats. What say you?
+{{get_character_name()}}: Thirty-five pieces of silver. What say you?
 {{mc_name}}: {{action}}{{mc_name}} sighs loudly.{{action_end}}[p]Aye, I'll take that.[/p]
-do add_player_money(35)
+do add_player_money(205, MONEY_TYPE.SILVER)
 set intro_was_honest = true
 => END
 

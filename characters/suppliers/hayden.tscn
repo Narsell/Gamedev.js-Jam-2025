@@ -4,9 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bwpqr8wu3og3" path="res://characters/suppliers/hayden.png" id="2_478uc"]
 
 [node name="BaseCharacter" instance=ExtResource("1_3j2eg")]
-position = Vector2(1.19209e-07, -1.19209e-07)
 texture = ExtResource("2_478uc")
-offset = Vector2(-2050, -2791.67)
 flip_h = false
 _char_name = "Hayden"
 _negotiator_type = 3

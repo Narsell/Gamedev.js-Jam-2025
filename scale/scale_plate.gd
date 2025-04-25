@@ -47,7 +47,7 @@ func _can_drop_data(_pos, data) -> bool:
 	if is_already_in || !enough_space:
 		return false
 	if data is Weight || data is BaseItem:
-		_anim_player.play("pulsate_hover")
+		_anim_player.play("hover")
 		return true
 	_anim_player.play("RESET")
 	return false
