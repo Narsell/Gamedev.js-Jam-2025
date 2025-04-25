@@ -36,7 +36,7 @@ set intro_was_honest = false
 do increase_rapport(0.2)
 {{get_character_name()}}: Thirty-five pieces of silver. What say you?
 {{mc_name}}: {{action}}{{mc_name}} sighs loudly.{{action_end}}[p]Aye, I'll take that.[/p]
-do add_player_money(205, MONEY_TYPE.SILVER)
+do add_player_money(35, MONEY_TYPE.SILVER)
 set intro_was_honest = true
 => END
 

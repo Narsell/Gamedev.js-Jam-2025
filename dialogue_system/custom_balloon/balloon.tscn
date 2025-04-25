@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://c75wgds1kwsa0"]
+[gd_scene load_steps=11 format=3 uid="uid://c75wgds1kwsa0"]
 
 [ext_resource type="Script" uid="uid://dg0indc77axh5" path="res://dialogue_system/custom_balloon/balloon.gd" id="1_36de5"]
+[ext_resource type="FontFile" uid="uid://cpp6wbi6knxxo" path="res://ui/assets/MedievalSharp-Regular.ttf" id="2_0r6qn"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 
@@ -17,26 +18,24 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0njw"]
-bg_color = Color(0.357332, 0.181639, 0.0300824, 1)
-border_width_left = 7
+bg_color = Color(0.988235, 0.784314, 0.364706, 1)
+border_width_left = 3
 border_width_top = 3
-border_width_right = 7
+border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.187449, 0.0841607, 0.00843614, 1)
-border_blend = true
+border_color = Color(0.266058, 0.121449, 6.01634e-08, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0r6qn"]
-bg_color = Color(0.305968, 0.152167, 0.0218741, 1)
-border_width_left = 7
-border_width_top = 3
-border_width_right = 7
-border_width_bottom = 3
+bg_color = Color(0.992157, 0.819608, 0.47451, 0.784314)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(0.229074, 0.108047, 0.0123287, 1)
-border_blend = true
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -45,20 +44,24 @@ corner_radius_bottom_left = 5
 [sub_resource type="FontVariation" id="FontVariation_odm2q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uy0d5"]
-bg_color = Color(0.511876, 0.341533, 0.218066, 1)
-border_width_left = 15
+bg_color = Color(0.992157, 0.819608, 0.47451, 1)
+border_width_left = 3
 border_width_top = 3
-border_width_right = 15
+border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.305968, 0.152167, 0.0218741, 1)
-border_blend = true
+border_color = Color(0.266058, 0.121449, 6.01634e-08, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+shadow_size = 5
 
 [sub_resource type="Theme" id="Theme_qq3yp"]
 default_font_size = 20
+Button/colors/font_color = Color(0.266058, 0.121449, 6.01634e-08, 1)
+Button/colors/font_focus_color = Color(0.240029, 0.106947, 2.40654e-08, 1)
+Button/colors/font_hover_color = Color(0.266058, 0.121449, 6.01634e-08, 1)
+Button/fonts/font = ExtResource("2_0r6qn")
 Button/styles/disabled = SubResource("StyleBoxFlat_spyqn")
 Button/styles/focus = SubResource("StyleBoxFlat_e0njw")
 Button/styles/hover = SubResource("StyleBoxFlat_e0njw")
@@ -69,6 +72,10 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 Panel/fonts/PanelText = SubResource("FontVariation_odm2q")
 Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
+RichTextLabel/colors/default_color = Color(0.224397, 0.0824161, 1.20327e-08, 1)
+RichTextLabel/colors/font_outline_color = Color(1, 0.926095, 0.989026, 1)
+RichTextLabel/constants/outline_size = 1
+RichTextLabel/fonts/normal_font = ExtResource("2_0r6qn")
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
