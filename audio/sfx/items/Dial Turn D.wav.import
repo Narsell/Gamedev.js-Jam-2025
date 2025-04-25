@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ldd3vfatbc5w"
+path="res://.godot/imported/Dial Turn D.wav-350315e4b8298b99b600ae31826a4834.sample"
+
+[deps]
+
+source_file="res://audio/sfx/items/Dial Turn D.wav"
+dest_files=["res://.godot/imported/Dial Turn D.wav-350315e4b8298b99b600ae31826a4834.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
