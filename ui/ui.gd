@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var sfx_bus_id = AudioServer.get_bus_index("sfx")
 @onready var music_bus_id = AudioServer.get_bus_index("Music")
-@onready var menu: Control = $Menu
+@onready var menu: Control = $CanvasLayer/Menu
 @onready var settings: Control = %Settings
 @onready var b_start: Button = %bStart
 @onready var b_settings: Button = %bSettings
