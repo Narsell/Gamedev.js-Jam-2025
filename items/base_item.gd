@@ -16,7 +16,7 @@ enum ITEM_TYPE {
 @export_group("Basic Properties")
 @export var item_type : ITEM_TYPE
 @export_group("Market")
-## Average price of this item in the market. (middle point)
+## Average price of this item in the market per pound. (middle point)
 @export var _market_buy_avg_rate : float
 ## How much the min and max values can vary from the avg rate.
 ## This is floored to 0.4 to open up the range you can win or lose from haggling.
@@ -75,8 +75,8 @@ func _to_string() -> String:
 	str += "\n\tMax Price: " + str(get_max_market_rate())
 	return str 
 
-
 func _input(event: InputEvent) -> void:
+	# This is so the object is shown again when dropped after being dragged.
 	if event is InputEventMouseButton:
 		if event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 			if !event.pressed:

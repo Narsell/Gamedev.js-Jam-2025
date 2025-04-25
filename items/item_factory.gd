@@ -23,7 +23,7 @@ static var _available_items : Dictionary = {
 }
 
 static var _item_scenes : Dictionary = {
-	BaseItem.ITEM_TYPE.VEGS_AND_FRUITS : preload("res://items/common/vegs_n_fruits/vegs_and_fruits.tscn"),
+	BaseItem.ITEM_TYPE.VEGS_AND_FRUITS : preload("res://items/common/vegs/vegetable.tscn"),
 	BaseItem.ITEM_TYPE.CHEESE : preload("res://items/common/cheese/cheese.tscn"),
 	BaseItem.ITEM_TYPE.PROTEIN : preload("res://items/common/animal_protein/protein.tscn")
 }

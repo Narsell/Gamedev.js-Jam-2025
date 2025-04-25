@@ -8,48 +8,52 @@
 [node name="Scale" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-pivot_offset = Vector2(163, 26)
 script = ExtResource("1_pywi1")
-
-[node name="Base" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
-texture = ExtResource("1_bicwd")
-
-[node name="Rod" type="TextureRect" parent="."]
-unique_name_in_owner = true
-layout_mode = 1
-offset_right = 350.0
-offset_bottom = 256.0
-pivot_offset = Vector2(164, 24)
-mouse_filter = 2
-texture = ExtResource("2_pywi1")
-
-[node name="LeftPos" type="Marker2D" parent="Rod"]
-position = Vector2(56, 27)
-
-[node name="RightPos" type="Marker2D" parent="Rod"]
-position = Vector2(292, 27)
 
 [node name="Plate_Left" parent="." node_paths=PackedStringArray("_marker_to_follow") instance=ExtResource("4_cel0x")]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 4.0
-offset_top = 26.0
-offset_right = 104.0
-offset_bottom = 126.0
+offset_left = -25.0
+offset_top = 13.0
+offset_right = -25.0
+offset_bottom = 13.0
 _marker_to_follow = NodePath("../Rod/LeftPos")
 
 [node name="Plate_Right" parent="." node_paths=PackedStringArray("_marker_to_follow") instance=ExtResource("4_cel0x")]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 240.0
-offset_top = 26.0
-offset_right = 340.0
-offset_bottom = 126.0
+offset_left = 205.0
+offset_top = 14.0
+offset_right = 205.0
+offset_bottom = 14.0
 _marker_to_follow = NodePath("../Rod/RightPos")
+
+[node name="Base" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 25.0
+offset_right = 1623.0
+offset_bottom = 2863.0
+scale = Vector2(0.08, 0.08)
+mouse_filter = 2
+texture = ExtResource("1_bicwd")
+
+[node name="Rod" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -1587.0
+offset_top = -129.0
+offset_right = 1791.0
+offset_bottom = 195.0
+scale = Vector2(0.08, 0.08)
+pivot_offset = Vector2(1725, 147)
+texture = ExtResource("2_pywi1")
+
+[node name="LeftPos" type="Marker2D" parent="Rod"]
+position = Vector2(286.97, 82.2499)
+
+[node name="RightPos" type="Marker2D" parent="Rod"]
+position = Vector2(3159.6, 101.025)
 
 [connection signal="weight_changed" from="Plate_Left" to="." method="_on_plate_left_weight_changed"]
 [connection signal="weight_changed" from="Plate_Right" to="." method="_on_plate_right_weight_changed"]

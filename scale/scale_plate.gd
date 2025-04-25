@@ -1,4 +1,4 @@
-extends TextureRect
+extends Control
 
 class_name ScalePlate
 enum WEIGHT_ITEM_TYPE { BASE_WEIGHTS, BASE_ITEMS }
@@ -12,6 +12,7 @@ signal weight_changed(value : float)
 
 @onready var _bottom_row_container : HBoxContainer = %ContainerBottomRow
 @onready var _top_row_container : HBoxContainer = %ContainerTopRow
+@onready var _texture : TextureRect = $Texture
 
 @onready var _anim_player : AnimationPlayer = %AnimationPlayer
 
@@ -21,6 +22,13 @@ var _total_space_for_items : int = _max_colums_per_row * 2
 
 func get_weight() -> int:
 	return _current_weight
+
+func _ready() -> void:
+	_bottom_row_container.child_entered_tree.connect(_on_container_any_row_child_entered_tree)
+	_bottom_row_container.child_exiting_tree.connect(_on_container_any_row_child_exiting_tree)
+	
+	_top_row_container.child_entered_tree.connect(_on_container_any_row_child_entered_tree)
+	_top_row_container.child_exiting_tree.connect(_on_container_any_row_child_exiting_tree)
 
 func _process(delta: float) -> void:
 	if _marker_to_follow:
@@ -56,15 +64,16 @@ func _add_node_to_container(node : Node) -> void:
 	elif _top_row_container.get_child_count() < _max_colums_per_row:
 		node.reparent(_top_row_container)
 
-func _on_box_container_child_entered_tree(node: Node) -> void:
+func _on_mouse_exited() -> void:
+	_anim_player.play("RESET")
+
+func _on_container_any_row_child_entered_tree(node: Node) -> void:
+	_anim_player.play("RESET")
 	_items_in[node.get_instance_id()] = null
 
-func _on_box_container_child_exiting_tree(node: Node) -> void:
+func _on_container_any_row_child_exiting_tree(node: Node) -> void:
 	_anim_player.play("RESET")
 	_items_in.erase(node.get_instance_id())
 	if node is BaseItem || node is Weight:
 		_current_weight -= node.get_weight()
 		weight_changed.emit(_current_weight)
-
-func _on_mouse_exited() -> void:
-	_anim_player.play("RESET")
