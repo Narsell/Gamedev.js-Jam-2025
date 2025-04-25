@@ -1,12 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://b0ss3nwo6i8vx"]
 
-[ext_resource type="Script" uid="uid://b1w7kvpgwn344" path="res://characters/base_character.gd" id="1_guqld"]
 [ext_resource type="Texture2D" uid="uid://ca30whs8m452u" path="res://characters/vendors/dagny_portrait.png" id="1_ihnxi"]
+[ext_resource type="Script" uid="uid://b1w7kvpgwn344" path="res://characters/base_character.gd" id="2_ihnxi"]
 
-[node name="Dagny" type="Sprite2D"]
-position = Vector2(-123, -167.5)
+[node name="Dagny" type="TextureRect"]
+offset_left = -123.0
+offset_top = -167.5
+offset_right = -123.0
+offset_bottom = -167.5
 scale = Vector2(0.06, 0.06)
 texture = ExtResource("1_ihnxi")
 flip_h = true
-script = ExtResource("1_guqld")
-metadata/_custom_type_script = "uid://b1w7kvpgwn344"
+script = ExtResource("2_ihnxi")
+_char_name = "Dagny"

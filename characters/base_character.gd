@@ -1,4 +1,5 @@
-extends Sprite2D
+extends TextureRect
+
 class_name BaseCharacter
 
 #region Types and Data

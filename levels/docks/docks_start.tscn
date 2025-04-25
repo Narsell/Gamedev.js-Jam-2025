@@ -64,15 +64,25 @@ grow_vertical = 2
 texture = SubResource("CompressedTexture2D_brsp7")
 expand_mode = 3
 
-[node name="Dagny" parent="." instance=ExtResource("3_i3pih")]
-unique_name_in_owner = true
-position = Vector2(963, 435)
-offset = Vector2(-148, -5)
-_char_name = "Dagny"
-
 [node name="PlayerCharacter" parent="." instance=ExtResource("3_7yf1e")]
 unique_name_in_owner = true
-position = Vector2(196, 436.782)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 81.0
+offset_top = -381.0
+offset_right = 4178.0
+offset_bottom = 5144.0
+grow_vertical = 0
+
+[node name="Dagny" parent="." instance=ExtResource("3_i3pih")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 952.0
+offset_top = 336.0
+offset_right = 5049.0
+offset_bottom = 5918.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
