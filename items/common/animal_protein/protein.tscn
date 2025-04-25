@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dwmydyigi2i44"]
+[gd_scene load_steps=31 format=3 uid="uid://dwmydyigi2i44"]
 
 [ext_resource type="PackedScene" uid="uid://dtaaykvj4f4a3" path="res://items/base_item.tscn" id="1_w65kw"]
 [ext_resource type="Texture2D" uid="uid://b76kavune2xsj" path="res://items/common/animal_protein/assets/bacon_01.png" id="2_8qu8s"]
@@ -28,9 +28,17 @@
 [ext_resource type="Texture2D" uid="uid://cmi7xgy1l3kns" path="res://items/common/animal_protein/assets/steak_t-bone.png" id="26_hm4sn"]
 [ext_resource type="Texture2D" uid="uid://dymrrtux0kq54" path="res://items/common/animal_protein/assets/testes_mountain_oyster.png" id="27_cnqtu"]
 [ext_resource type="Texture2D" uid="uid://t6g411cyqp7c" path="res://items/common/animal_protein/assets/testes_prairie_oysters.png" id="28_1kvx6"]
+[ext_resource type="AudioStream" uid="uid://wjugod6uo2sj" path="res://audio/sfx/items/Beefy Slam A.wav" id="29_688x8"]
+[ext_resource type="AudioStream" uid="uid://clfbqm4cqy3lx" path="res://audio/sfx/items/Beefy Slam B.wav" id="30_stvip"]
 
 [node name="BaseItem" instance=ExtResource("1_w65kw")]
 item_type = 1
 _market_buy_avg_rate = 35.0
 _delta_buy_rate = 0.8
 available_textures = Array[Texture2D]([ExtResource("2_8qu8s"), ExtResource("3_0a2na"), ExtResource("4_688x8"), ExtResource("5_stvip"), ExtResource("6_fwieb"), ExtResource("7_33iar"), ExtResource("8_xtrcv"), ExtResource("9_8m254"), ExtResource("10_kf5h7"), ExtResource("11_btusu"), ExtResource("12_7qwec"), ExtResource("13_dsg1r"), ExtResource("14_sndxh"), ExtResource("15_71etc"), ExtResource("16_tbsg3"), ExtResource("17_kw5co"), ExtResource("18_6lyc4"), ExtResource("19_23w0q"), ExtResource("20_2ghwc"), ExtResource("21_vh8p5"), ExtResource("22_k4c7f"), ExtResource("23_cpyx6"), ExtResource("24_vj6y1"), ExtResource("25_7klhq"), ExtResource("26_hm4sn"), ExtResource("27_cnqtu"), ExtResource("28_1kvx6")])
+
+[node name="PickedAudio" parent="." index="0"]
+stream = ExtResource("29_688x8")
+
+[node name="DroppedAudio" parent="." index="1"]
+stream = ExtResource("30_stvip")

@@ -12,6 +12,9 @@ enum ITEM_TYPE {
 #endregion
 
 @onready var _preview_drag_texture : TextureRect = null
+@onready var picked_audio: AudioStreamPlayer = $PickedAudio
+@onready var dropped_audio: AudioStreamPlayer = $DroppedAudio
+
 
 @export_group("Basic Properties")
 @export var item_type : ITEM_TYPE
@@ -30,8 +33,10 @@ var _weight : int = 1.0
 
 func _init() -> void:
 	_weight = (randi() % max_possible_weight) + 1
+	focus_mode = Control.FOCUS_CLICK
 	
 func _ready() -> void:
+	connect("focus_entered", _on_focus_entered)
 	if available_textures.size() <= 0:
 		push_error("No textures assigned on %s" % self.name)
 		return
@@ -80,4 +85,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 			if !event.pressed:
+				dropped_audio.play()
 				show()
+
+func _on_focus_entered() -> void:
+	picked_audio.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c2p0jrr3dncw2"]
+[gd_scene load_steps=25 format=3 uid="uid://c2p0jrr3dncw2"]
 
 [ext_resource type="PackedScene" uid="uid://dtaaykvj4f4a3" path="res://items/base_item.tscn" id="1_g0xgf"]
 [ext_resource type="Script" uid="uid://bxgcy6cvobmbs" path="res://items/common/cheese/cheese.gd" id="3_xn4fb"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://jfsa0a8g8rte" path="res://items/common/cheese/assets/cheese_muenster_02.png" id="21_6avid"]
 [ext_resource type="Texture2D" uid="uid://22sdftxxij3e" path="res://items/common/cheese/assets/cheese_muenster_03.png" id="22_5lrr8"]
 [ext_resource type="Texture2D" uid="uid://bj7l6j276ttnk" path="res://items/common/cheese/assets/cheese_muenster_04.png" id="23_m1uae"]
+[ext_resource type="AudioStream" uid="uid://blk5afvrky507" path="res://audio/sfx/items/Massive Dull Object A.wav" id="23_mudm8"]
+[ext_resource type="AudioStream" uid="uid://ucdutpag3lok" path="res://audio/sfx/items/Massive Dull Object B.wav" id="24_d4wi5"]
 [ext_resource type="Texture2D" uid="uid://g7r4ojr460hw" path="res://items/common/cheese/assets/cheese_parmesean_02.png" id="26_nrsi5"]
 [ext_resource type="Texture2D" uid="uid://s68p76t8meef" path="res://items/common/cheese/assets/cheese_parmesean_03.png" id="27_kb2es"]
 [ext_resource type="Texture2D" uid="uid://db63hdxqwjny1" path="res://items/common/cheese/assets/cheese_parmesean_04.png" id="28_fyfss"]
@@ -28,3 +30,9 @@ script = ExtResource("3_xn4fb")
 item_type = 2
 _market_buy_avg_rate = 15.0
 available_textures = Array[Texture2D]([ExtResource("4_cg1h4"), ExtResource("5_tio14"), ExtResource("6_bhimk"), ExtResource("9_l6p8t"), ExtResource("10_xygbq"), ExtResource("12_g7h4t"), ExtResource("13_00twe"), ExtResource("14_55gix"), ExtResource("15_f8rtp"), ExtResource("18_l6o5c"), ExtResource("19_s0bn4"), ExtResource("21_6avid"), ExtResource("22_5lrr8"), ExtResource("23_m1uae"), ExtResource("26_nrsi5"), ExtResource("27_kb2es"), ExtResource("28_fyfss"), ExtResource("30_lnn3t"), ExtResource("31_m2ol7"), ExtResource("32_kyu01")])
+
+[node name="PickedAudio" parent="." index="0"]
+stream = ExtResource("23_mudm8")
+
+[node name="DroppedAudio" parent="." index="1"]
+stream = ExtResource("24_d4wi5")

@@ -72,7 +72,11 @@ _char_name = "Dagny"
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("3_7yf1e")]
 unique_name_in_owner = true
-position = Vector2(196, 436.782)
+layout_mode = 0
+offset_left = 196.0
+offset_top = 436.782
+offset_right = 236.0
+offset_bottom = 476.782
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true

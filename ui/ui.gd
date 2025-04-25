@@ -7,8 +7,8 @@ extends CanvasLayer
 @onready var b_start: Button = %bStart
 @onready var b_settings: Button = %bSettings
 @onready var b_menu: Button = %bMenu
-@onready var sfx_scroll_bar: HScrollBar = %SfxScrollBar
-@onready var music_scroll_bar: HScrollBar = %MusicScrollBar
+@onready var sfx_scroll_bar: HSlider = %SfxScrollBar
+@onready var music_scroll_bar: HSlider = %MusicScrollBar
 
 func _ready() -> void:
 	music_scroll_bar.connect("value_changed", _on_music_scroll_bar_value_changed)

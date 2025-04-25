@@ -9,3 +9,9 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_c43hp")
 expand_mode = 1
 script = ExtResource("1_m53hc")
+
+[node name="PickedAudio" type="AudioStreamPlayer" parent="."]
+bus = &"sfx"
+
+[node name="DroppedAudio" type="AudioStreamPlayer" parent="."]
+bus = &"sfx"

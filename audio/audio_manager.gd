@@ -1,5 +1,6 @@
 extends Node
 
+@onready var bg_ambience: AudioStreamPlayer = $BGAmbience
 @export var bg_music_player: AudioStreamPlayer
 var current_place: String 
 
@@ -17,4 +18,5 @@ func _process(delta: float) -> void:
 func update_music_for_scene():
 	var current_place_music = str(current_place + "Music")
 	bg_music_player["parameters/switch_to_clip"] = current_place_music
+	bg_ambience["parameters/switch_to_clip"] = current_place
 	
