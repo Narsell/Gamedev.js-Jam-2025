@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://pq5hq0e26puj"]
+[gd_scene load_steps=6 format=3 uid="uid://pq5hq0e26puj"]
 
 [ext_resource type="Texture2D" uid="uid://c10oxytke341o" path="res://scale/Base.png" id="1_bicwd"]
 [ext_resource type="Script" uid="uid://d2cw0wg7y0ra5" path="res://scale/scale.gd" id="1_pywi1"]
 [ext_resource type="Texture2D" uid="uid://dwtcmegyrnel" path="res://scale/Rod.png" id="2_pywi1"]
 [ext_resource type="PackedScene" uid="uid://dr44pdjsqvqcb" path="res://scale/scale_plate.tscn" id="4_cel0x"]
+[ext_resource type="AudioStream" uid="uid://ldd3vfatbc5w" path="res://audio/sfx/items/Dial Turn D.wav" id="5_hlule"]
 
 [node name="Scale" type="Control"]
 layout_mode = 3
@@ -54,6 +55,10 @@ position = Vector2(286.97, 82.2499)
 
 [node name="RightPos" type="Marker2D" parent="Rod"]
 position = Vector2(3159.6, 101.025)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hlule")
+bus = &"sfx"
 
 [connection signal="weight_changed" from="Plate_Left" to="." method="_on_plate_left_weight_changed"]
 [connection signal="weight_changed" from="Plate_Right" to="." method="_on_plate_right_weight_changed"]
