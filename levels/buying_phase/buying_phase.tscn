@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://cb5tdaw5rbaf1" path="res://levels/buying_phase/buying_phase.gd" id="1_mr06o"]
 [ext_resource type="PackedScene" uid="uid://c6qfmkkpmiwb5" path="res://characters/player/player_character.tscn" id="1_v0lui"]
 [ext_resource type="Texture2D" uid="uid://gc2jlx1uudxg" path="res://levels/common/docks.png" id="1_yi1l1"]
+[ext_resource type="Texture2D" uid="uid://xu217l0wrsd1" path="res://scale/table.png" id="4_wqqg3"]
 [ext_resource type="PackedScene" uid="uid://pq5hq0e26puj" path="res://scale/scale.tscn" id="5_brsp7"]
 [ext_resource type="PackedScene" uid="uid://dh341jww3l3d1" path="res://scale/scale_item_container.tscn" id="6_hsts2"]
-[ext_resource type="Texture2D" uid="uid://pgy4enrqlq4a" path="res://scale/weights/plate.png" id="6_ox5nk"]
 [ext_resource type="PackedScene" uid="uid://d1fjrbkswaxy" path="res://scale/weights/weight.tscn" id="6_wqqg3"]
 
 [node name="BuyingPhase" type="Control"]
@@ -27,38 +27,51 @@ grow_vertical = 2
 texture = ExtResource("1_yi1l1")
 expand_mode = 3
 
-[node name="PlayerCharacter" parent="." instance=ExtResource("1_v0lui")]
-position = Vector2(195, 436)
-
-[node name="SupplierPosition" type="Marker2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(1079, 603)
-
 [node name="Table" type="TextureRect" parent="."]
-modulate = Color(0.151276, 0.151276, 0.151276, 1)
-layout_mode = 0
-offset_left = 308.0
-offset_top = 473.0
-offset_right = 408.0
-offset_bottom = 553.0
-scale = Vector2(5.49703, 1.85314)
-texture = ExtResource("6_ox5nk")
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -352.0
+offset_top = -304.0
+offset_right = 678.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_wqqg3")
 
 [node name="ItemContainer" parent="." instance=ExtResource("6_hsts2")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = 712.0
-offset_top = 536.0
-offset_right = 840.0
-offset_bottom = 584.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 164.0
+offset_top = -311.0
+offset_right = 292.0
+offset_bottom = -263.0
+grow_horizontal = 2
+grow_vertical = 0
 _supported_type = 1
 
 [node name="WeightContainer" parent="." instance=ExtResource("6_hsts2")]
 layout_mode = 1
-offset_left = 320.0
-offset_top = 512.0
-offset_right = 468.0
-offset_bottom = 592.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -255.0
+offset_top = -344.0
+offset_right = -107.0
+offset_bottom = -264.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="GridContainer" parent="WeightContainer" index="0"]
 offset_left = -72.0
@@ -90,12 +103,38 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -160.0
-offset_top = -248.0
-offset_right = -160.0
-offset_bottom = -248.0
+offset_left = -119.0
+offset_top = -480.0
+offset_right = -119.0
+offset_bottom = -480.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.865, 0.865)
+
+[node name="SupplierPosition" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -40.0
+offset_right = -72.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_v0lui")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 79.0
+offset_top = -380.0
+offset_right = 4176.0
+offset_bottom = 5145.0
+grow_vertical = 0
 
 [editable path="WeightContainer"]

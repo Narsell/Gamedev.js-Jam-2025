@@ -30,6 +30,13 @@ AudioGlobal="*res://globals/audio_global.gd"
 
 runtime/balloon_path="res://dialogue_system/custom_balloon/balloon.tscn"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
