@@ -1,0 +1,36 @@
+[gd_scene load_steps=29 format=3 uid="uid://dwmydyigi2i44"]
+
+[ext_resource type="PackedScene" uid="uid://dtaaykvj4f4a3" path="res://items/base_item.tscn" id="1_w65kw"]
+[ext_resource type="Texture2D" uid="uid://b76kavune2xsj" path="res://items/common/animal_protein/assets/bacon_01.png" id="2_8qu8s"]
+[ext_resource type="Texture2D" uid="uid://b64wsip5py120" path="res://items/common/animal_protein/assets/bacon_01_1.png" id="3_0a2na"]
+[ext_resource type="Texture2D" uid="uid://bcanml2fab0u8" path="res://items/common/animal_protein/assets/bacon_02_1.png" id="4_688x8"]
+[ext_resource type="Texture2D" uid="uid://cd7kkawl6cq8g" path="res://items/common/animal_protein/assets/bacon_04.png" id="5_stvip"]
+[ext_resource type="Texture2D" uid="uid://be284326kmstr" path="res://items/common/animal_protein/assets/chicken.png" id="6_fwieb"]
+[ext_resource type="Texture2D" uid="uid://cahqh2fc68o0p" path="res://items/common/animal_protein/assets/chicken_drumstick_02.png" id="7_33iar"]
+[ext_resource type="Texture2D" uid="uid://bsi5esycsvnvg" path="res://items/common/animal_protein/assets/egg.png" id="8_xtrcv"]
+[ext_resource type="Texture2D" uid="uid://c6n817mwetb8" path="res://items/common/animal_protein/assets/egg_large.png" id="9_8m254"]
+[ext_resource type="Texture2D" uid="uid://d4a50sa10t02e" path="res://items/common/animal_protein/assets/ham.png" id="10_kf5h7"]
+[ext_resource type="Texture2D" uid="uid://5taq3roq2wyh" path="res://items/common/animal_protein/assets/jamon_bellota.png" id="11_btusu"]
+[ext_resource type="Texture2D" uid="uid://dpux62pmv2qf3" path="res://items/common/animal_protein/assets/kebabs_01.png" id="12_7qwec"]
+[ext_resource type="Texture2D" uid="uid://crgjs0xv83p25" path="res://items/common/animal_protein/assets/meatballs_03.png" id="13_dsg1r"]
+[ext_resource type="Texture2D" uid="uid://40nbr4eoy8h" path="res://items/common/animal_protein/assets/oyster.png" id="14_sndxh"]
+[ext_resource type="Texture2D" uid="uid://hkt2ko6u5jp0" path="res://items/common/animal_protein/assets/ribs.png" id="15_71etc"]
+[ext_resource type="Texture2D" uid="uid://dhb4quub1d6cg" path="res://items/common/animal_protein/assets/ribs_01.png" id="16_tbsg3"]
+[ext_resource type="Texture2D" uid="uid://f01ljwk1fqym" path="res://items/common/animal_protein/assets/ribs_02.png" id="17_kw5co"]
+[ext_resource type="Texture2D" uid="uid://crkbylrpojn2x" path="res://items/common/animal_protein/assets/rib_roast.png" id="18_6lyc4"]
+[ext_resource type="Texture2D" uid="uid://dklmnih3xwpdg" path="res://items/common/animal_protein/assets/salmon_01.png" id="19_23w0q"]
+[ext_resource type="Texture2D" uid="uid://t70434y6fbl1" path="res://items/common/animal_protein/assets/sashimi.png" id="20_2ghwc"]
+[ext_resource type="Texture2D" uid="uid://bmhe66ii3q6k1" path="res://items/common/animal_protein/assets/steak.png" id="21_vh8p5"]
+[ext_resource type="Texture2D" uid="uid://b1pdoey8c0si6" path="res://items/common/animal_protein/assets/steaks_t-bone_01.png" id="22_k4c7f"]
+[ext_resource type="Texture2D" uid="uid://bb2luns1mtvkn" path="res://items/common/animal_protein/assets/steaks_t-bone_02.png" id="23_cpyx6"]
+[ext_resource type="Texture2D" uid="uid://gm387q0qjjf" path="res://items/common/animal_protein/assets/steak_cooked_01.png" id="24_vj6y1"]
+[ext_resource type="Texture2D" uid="uid://d4dj8j5bkwj6s" path="res://items/common/animal_protein/assets/steak_raw.png" id="25_7klhq"]
+[ext_resource type="Texture2D" uid="uid://cmi7xgy1l3kns" path="res://items/common/animal_protein/assets/steak_t-bone.png" id="26_hm4sn"]
+[ext_resource type="Texture2D" uid="uid://dymrrtux0kq54" path="res://items/common/animal_protein/assets/testes_mountain_oyster.png" id="27_cnqtu"]
+[ext_resource type="Texture2D" uid="uid://t6g411cyqp7c" path="res://items/common/animal_protein/assets/testes_prairie_oysters.png" id="28_1kvx6"]
+
+[node name="BaseItem" instance=ExtResource("1_w65kw")]
+item_type = 1
+_market_buy_avg_rate = 35.0
+_delta_buy_rate = 0.8
+available_textures = Array[Texture2D]([ExtResource("2_8qu8s"), ExtResource("3_0a2na"), ExtResource("4_688x8"), ExtResource("5_stvip"), ExtResource("6_fwieb"), ExtResource("7_33iar"), ExtResource("8_xtrcv"), ExtResource("9_8m254"), ExtResource("10_kf5h7"), ExtResource("11_btusu"), ExtResource("12_7qwec"), ExtResource("13_dsg1r"), ExtResource("14_sndxh"), ExtResource("15_71etc"), ExtResource("16_tbsg3"), ExtResource("17_kw5co"), ExtResource("18_6lyc4"), ExtResource("19_23w0q"), ExtResource("20_2ghwc"), ExtResource("21_vh8p5"), ExtResource("22_k4c7f"), ExtResource("23_cpyx6"), ExtResource("24_vj6y1"), ExtResource("25_7klhq"), ExtResource("26_hm4sn"), ExtResource("27_cnqtu"), ExtResource("28_1kvx6")])

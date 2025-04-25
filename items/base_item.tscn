@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://pgy4enrqlq4a" path="res://scale/weights/plate.png" id="2_c43hp"]
 
 [node name="BaseItem" type="TextureRect"]
-custom_minimum_size = Vector2(40, 40)
+custom_minimum_size = Vector2(45, 45)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_c43hp")
 expand_mode = 1
 script = ExtResource("1_m53hc")
