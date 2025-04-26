@@ -14,6 +14,7 @@ func get_weight() -> int:
 func _ready() -> void:
 	focus_mode = Control.FOCUS_CLICK
 	connect("focus_entered", _on_focus_entered)
+	connect("focus_exited", _on_focus_exited)
 	_lb_desc.text = str(weight) + " lb"
 	_lb_desc.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
@@ -33,3 +34,6 @@ func _input(event: InputEvent) -> void:
 
 func _on_focus_entered() -> void:
 	picked_audio.play()
+
+func _on_focus_exited() -> void:
+	dropped_audio.play()

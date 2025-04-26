@@ -37,6 +37,7 @@ func _init() -> void:
 	
 func _ready() -> void:
 	connect("focus_entered", _on_focus_entered)
+	connect("focus_exited", _on_focus_exited)
 	if available_textures.size() <= 0:
 		push_error("No textures assigned on %s" % self.name)
 		return
@@ -85,8 +86,10 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 			if !event.pressed:
-				dropped_audio.play()
 				show()
 
 func _on_focus_entered() -> void:
 	picked_audio.play()
+
+func _on_focus_exited() -> void:
+	dropped_audio.play()
