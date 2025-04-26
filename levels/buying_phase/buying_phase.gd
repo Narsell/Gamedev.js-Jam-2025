@@ -21,6 +21,7 @@ func _get_next_supplier() -> BaseCharacter:
 	return new_character_node
 
 func _start_interaction_with_current_char() -> void:
+	GameState.check_for_game_lost()
 	_item_container.remove_children_from_container()
 	_current_char_node = _get_next_supplier()
 	if _current_char_node:

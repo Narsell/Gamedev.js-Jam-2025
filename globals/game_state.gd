@@ -38,6 +38,8 @@ func spend_player_money(amount : int, type : MONEY_TYPE) -> void:
 		player_money[type] -= amount
 	print("Current money: \n\tSilver: " + str(player_money[MONEY_TYPE.SILVER]) + "\n\tGold: " + str(player_money[MONEY_TYPE.GOLD]))
 
+func did_player_run_out_of_money() -> bool:
+	return player_money[MONEY_TYPE.SILVER] == 0 && player_money[MONEY_TYPE.GOLD] == 0
 
 #endregion
 
@@ -61,15 +63,21 @@ enum NPC_TYPE { SUPPLIER, VENDOR }
 var _character_data : Dictionary 
 var intro_was_honest : bool = false
 
+func are_there_valid_characters_left() -> bool:
+	var valid_char_count : int = 0
+	for char_key : CharacterData in _character_data.keys():
+		var character_data : CharacterData = _character_data[char_key]
+		if character_data.current_rapport > 0.0:
+			++valid_char_count
+	return valid_char_count > 0
+
 func get_random_character_node(type : NPC_TYPE) -> BaseCharacter:
 	var characters : Array = character_list[type]
 	var char_scene : PackedScene =  characters.pick_random()
 	var char_node : BaseCharacter = char_scene.instantiate()
 	var char_name : String = char_node.get_character_name()
-	if _character_data.find_key(char_name):
-		char_node.update_data(_character_data[char_name])
-	else:
-		save_character_data(char_node)
+	if _character_data.has(char_name):
+		char_node.update_character_with_new_data(_character_data[char_name])
 	return char_node
 
 func save_character_data(char_node : BaseCharacter) -> void:
@@ -77,4 +85,13 @@ func save_character_data(char_node : BaseCharacter) -> void:
 	_character_data[char_name] = char_node.get_data()
 	if not _character_data.find_key(char_name):
 		print("Saved new character data for character '" + char_name + "'")
+#endregion
+
+#region general game state
+
+func check_for_game_lost() -> void:
+	if did_player_run_out_of_money() && !are_there_valid_characters_left():
+		get_tree().paused = true
+		pass
+
 #endregion

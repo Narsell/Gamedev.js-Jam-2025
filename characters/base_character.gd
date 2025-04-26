@@ -9,7 +9,7 @@ enum NEGOTIATOR_TYPE { SUCKER, NAIVE, AVERAGE, TOUGH, HARD }
 @export_group("Character Traits")
 @export var _char_name : String = "NO_NAME"
 @export var _negotiator_type : NEGOTIATOR_TYPE = NEGOTIATOR_TYPE.AVERAGE
-@export_range(0, 1, 0.1) var _rapport_floor : float = 0
+@export_range(0.5, 1, 0.1) var _rapport_floor : float = 0
 ## How good an offer needs to be over the acceptable price in order to increase rapport.
 @export_range(0, 0.3, 0.1) var _percent_to_increase_rapport : float = 0.1
 ## What kind of objects this character can offer.
@@ -20,15 +20,28 @@ var knows_main_character : bool = false
 var _current_rapport : float = _rapport_floor
 var _data : CharacterData
 
-func _init() -> void:
-	_data = CharacterData.new(_char_name, _negotiator_type, _rapport_floor, _percent_to_increase_rapport)
+func _ready() -> void:
+	update_data_with_character_data()
 
-func update_data(char_data : CharacterData) -> void:
+func update_character_with_new_data(char_data : CharacterData) -> void:
 	_data = char_data
-	_char_name = char_data.name
+	
+	_char_name = char_data.char_name
 	_negotiator_type = char_data.negotiator_type
 	_rapport_floor = char_data.rapport_floor
+	_current_rapport = char_data.current_rapport
 	_percent_to_increase_rapport = char_data.perc_to_increase_rapport
+	knows_main_character = char_data.knows_main_character
+	
+func update_data_with_character_data() -> void:
+	if _data == null:
+		_data = CharacterData.new()
+	_data.char_name = _char_name
+	_data.negotiator_type = _negotiator_type
+	_data.rapport_floor = _rapport_floor
+	_data.current_rapport = _current_rapport
+	_data.perc_to_increase_rapport = _percent_to_increase_rapport
+	_data.knows_main_character = knows_main_character
 
 func get_character_name() -> String:
 	return _char_name
@@ -43,7 +56,7 @@ func lower_rapport() -> void:
 	var rapport_decrement := 0.1
 	if _negotiator_type == NEGOTIATOR_TYPE.HARD:
 		rapport_decrement = 0.2
-	_current_rapport = clampf(_current_rapport - rapport_decrement, _rapport_floor, 1.0)
+	_current_rapport = clampf(_current_rapport - rapport_decrement, 0.0, 1.0)
 	
 func increase_rapport(amount : float = 0.1) -> void:
 	var rapport_increment := amount
@@ -74,8 +87,9 @@ func hear_offer(offer: Offer) -> OfferResult:
 		offer_result.response = OfferResult.RESPONSE.FUCK_YOU
 		
 	return offer_result
-	
+		
 func _exit_tree() -> void:
+	update_data_with_character_data()
 	GameState.save_character_data(self)
 
 func _get_acceptable_price(item : BaseItem) -> float:

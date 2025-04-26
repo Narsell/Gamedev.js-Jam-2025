@@ -9,6 +9,7 @@ if not knows_main_character:
 	{{mc_name}}: Name's Venuto, what should I call you?
 	{{get_character_name()}}: {{action}}{{get_character_name()}} nods{{action_end}} [p]{{get_character_name()}}'s fine.[/p]
 	{{mc_name}}: Well, let us see what you brought.
+	set knows_main_character = true
 else:
 	if get_rapport() == 1.0:
 		{{get_character_name()}}: Ah, {{mc_name}}. Good to see you, friend.
