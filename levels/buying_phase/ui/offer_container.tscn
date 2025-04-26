@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://p3eadce6ajxt"]
+
+[ext_resource type="Theme" uid="uid://c11rvdstm3l12" path="res://levels/buying_phase/ui/buying_phase.tres" id="1_uqn4t"]
+[ext_resource type="Script" uid="uid://chac3atfsowtv" path="res://levels/buying_phase/offer_container.gd" id="2_4p8e7"]
+[ext_resource type="PackedScene" uid="uid://suyjdlhch4uj" path="res://levels/buying_phase/ui/coin_container.tscn" id="3_8g2hk"]
+[ext_resource type="Texture2D" uid="uid://cmerto3sacgis" path="res://ui/assets/gold_coin.png" id="4_dbctt"]
+
+[node name="OfferContainer" type="VBoxContainer"]
+offset_right = 249.0
+offset_bottom = 74.0
+theme = ExtResource("1_uqn4t")
+theme_override_constants/separation = 15
+alignment = 1
+script = ExtResource("2_4p8e7")
+
+[node name="InputContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="SilverInput" parent="InputContainer" instance=ExtResource("3_8g2hk")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Input" parent="InputContainer/SilverInput" index="1"]
+tooltip_text = "Silver coins"
+
+[node name="GoldInput" parent="InputContainer" instance=ExtResource("3_8g2hk")]
+unique_name_in_owner = true
+layout_mode = 2
+_coin_type = 1
+
+[node name="CoinIcon" parent="InputContainer/GoldInput" index="0"]
+texture = ExtResource("4_dbctt")
+
+[node name="Input" parent="InputContainer/GoldInput" index="1"]
+tooltip_text = "Gold coins"
+
+[node name="ButtonContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="SubmitOfferButton" type="Button" parent="ButtonContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+text = "OFFER"
+
+[connection signal="value_changed" from="InputContainer/SilverInput" to="." method="_on_silver_input_value_changed"]
+[connection signal="pressed" from="ButtonContainer/SubmitOfferButton" to="." method="_on_submit_offer_button_pressed"]
+
+[editable path="InputContainer/SilverInput"]
+[editable path="InputContainer/GoldInput"]

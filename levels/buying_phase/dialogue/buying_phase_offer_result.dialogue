@@ -1,0 +1,14 @@
+using DialogueUtils
+using GameState
+
+~ response_to_offer
+if response == RESPONSE.DEAL:
+	{{get_character_name()}}: What a DEAL! of course, take it! See you around.
+elif response == RESPONSE.ACCEPT:
+	{{get_character_name()}}: Ok fine that's fair, take it. see you next time.
+elif response == RESPONSE.NO_DEAL:
+	{{get_character_name()}}: Doesn't sound right to me, be seeing ya.
+elif response == RESPONSE.FUCK_YOU:
+	{{get_character_name()}}: Are you fucking mad? Im out.
+do offer_response_ended.emit()
+=> END

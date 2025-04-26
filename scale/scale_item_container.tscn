@@ -8,6 +8,21 @@ bg_color = Color(0.415686, 0.678431, 0.364706, 0)
 [sub_resource type="Theme" id="Theme_p7s6q"]
 Panel/styles/panel = SubResource("StyleBoxFlat_vtj8e")
 
+[sub_resource type="Animation" id="Animation_vpx7e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme:Panel/styles/panel")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("StyleBoxFlat_vtj8e")]
+}
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7s6q"]
 bg_color = Color(0.287172, 0.179477, 0.0158062, 0.686275)
 border_width_left = 2
@@ -39,21 +54,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [SubResource("StyleBoxFlat_p7s6q")]
-}
-
-[sub_resource type="Animation" id="Animation_vpx7e"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:theme:Panel/styles/panel")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("StyleBoxFlat_vtj8e")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vpx7e"]

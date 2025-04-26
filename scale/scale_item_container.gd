@@ -13,6 +13,13 @@ var _items_in : Dictionary = {}
 
 func get_grid_container_node() -> GridContainer:
 	return _grid_container
+	
+func add_child_to_container(node : Node) -> void:
+	_grid_container.add_child(node)
+	
+func remove_children_from_container() -> void:
+	for child in _grid_container.get_children():
+		_grid_container.remove_child(child)
 
 func _ready() -> void:
 	for child in _grid_container.get_children():

@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://duv8t6tnigdy2" path="res://characters/suppliers/baldwin.png" id="2_r7c7d"]
 
 [node name="Baldwin" instance=ExtResource("1_rdw8y")]
-offset_top = 0.5
-offset_bottom = 0.5
+offset_left = -4097.0
+offset_top = -5582.0
+pivot_offset = Vector2(4097, 5582)
 texture = ExtResource("2_r7c7d")
 flip_h = false
 _char_name = "Baldwin"

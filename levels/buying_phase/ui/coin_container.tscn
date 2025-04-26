@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://suyjdlhch4uj"]
+
+[ext_resource type="Theme" uid="uid://c11rvdstm3l12" path="res://levels/buying_phase/ui/buying_phase.tres" id="1_dof8d"]
+[ext_resource type="Texture2D" uid="uid://dc5lnux6c0pk4" path="res://ui/assets/silver_coin.png" id="1_w2vro"]
+[ext_resource type="Script" uid="uid://bkltojf30kyjw" path="res://levels/buying_phase/ui/coin_container.gd" id="2_06il6"]
+
+[node name="CoinInputContainer" type="HBoxContainer"]
+size_flags_horizontal = 4
+theme = ExtResource("1_dof8d")
+alignment = 1
+script = ExtResource("2_06il6")
+
+[node name="CoinIcon" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("1_w2vro")
+
+[node name="Input" type="SpinBox" parent="."]
+show_behind_parent = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/field_and_buttons_separation = -20
+rounded = true
+alignment = 1

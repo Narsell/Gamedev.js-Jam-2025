@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://btgx738x21dni"
+path="res://.godot/imported/buying_phase_intro.dialogue-cc3fe226622b4c1546fc60825a7c440d.tres"
+
+[deps]
+
+source_file="res://levels/buying_phase/dialogue/buying_phase_intro.dialogue"
+dest_files=["res://.godot/imported/buying_phase_intro.dialogue-cc3fe226622b4c1546fc60825a7c440d.tres"]
+
+[params]
+
+defaults=true

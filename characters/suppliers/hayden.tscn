@@ -4,6 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://bwpqr8wu3og3" path="res://characters/suppliers/hayden.png" id="2_478uc"]
 
 [node name="BaseCharacter" instance=ExtResource("1_3j2eg")]
+offset_left = -4095.0
+offset_top = -5583.0
+offset_right = 2.0
+offset_bottom = -1.0
+pivot_offset = Vector2(4097, 5581)
 texture = ExtResource("2_478uc")
 flip_h = false
 _char_name = "Hayden"

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://beavdx3sa7ub8"
+path="res://.godot/imported/buying_phase_offer_result.dialogue-de767628e29f10a8a8d841a4c0511e5e.tres"
+
+[deps]
+
+source_file="res://levels/buying_phase/dialogue/buying_phase_offer_result.dialogue"
+dest_files=["res://.godot/imported/buying_phase_offer_result.dialogue-de767628e29f10a8a8d841a4c0511e5e.tres"]
+
+[params]
+
+defaults=true

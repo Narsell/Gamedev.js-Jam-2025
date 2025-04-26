@@ -64,9 +64,9 @@ func hear_offer(offer: Offer) -> OfferResult:
 		offer_result.response = OfferResult.RESPONSE.NO_DEAL
 		offer_result.counter_offer = _calculate_counter_offer(offer.item)
 	else:
-		var possitive_diff: = acceptable_price - offer.offered_price
-		if possitive_diff > _percent_to_increase_rapport or _negotiator_type <= NEGOTIATOR_TYPE.NAIVE:
-			offer_result.DEAL
+		var possitive_diff_perc: = (offer.offered_price - acceptable_price) / acceptable_price
+		if possitive_diff_perc > _percent_to_increase_rapport or _negotiator_type <= NEGOTIATOR_TYPE.NAIVE:
+			offer_result.response = offer_result.RESPONSE.DEAL
 			increase_rapport()
 			
 	# Rapport reached 0, this character is mad as fuck.
